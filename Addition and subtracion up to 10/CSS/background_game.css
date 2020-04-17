@@ -1,5 +1,5 @@
-.container {
-
+.uchiru {
+	font-family: 'PT Sans'!important;
 }
 
 div .uchiru-bg-cell {
@@ -18,7 +18,10 @@ div .uchiru-bg-stuff {
 	top: 0;
 }
 
-.container img {
+img.uchiru-bg-color {
 	width: 100%;
+	height: 100%;
 	z-index: -1;
+	top: 0;
+	bottom: 0;
 }

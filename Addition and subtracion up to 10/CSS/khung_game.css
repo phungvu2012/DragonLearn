@@ -1,0 +1,134 @@
+.uchiru-box {
+  z-index: 0;
+  position: relative;
+  margin: 15px auto 20px;
+  width: 960px;
+  min-height: 600px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0px 2px 19px 0px rgba(0,0,0,0.5), 0px 2px 4px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 2px 19px 0px rgba(0,0,0,0.5), 0px 2px 4px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 2px 19px 0px rgba(0,0,0,0.5), 0px 2px 4px 0px rgba(0,0,0,0.5);
+}
+
+.uchiru-head {
+	position: relative;
+	border-bottom: 1px solid rgba(150, 150, 150, 0.29);
+	padding: 0 20px;
+	line-height: 49px;
+	font-family: 'Noto Sans'!important;
+}
+
+.arrow-left {
+	top: -2px;
+	vertical-align: middle;
+	display: inline-block;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 15px solid #246EA1;
+	position: relative;
+	border-radius: 50%;
+}
+
+.arrow-left:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: -18px;
+	top: -15px;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 15px solid white;
+	border-top: 15px solid transparent: ;
+}
+
+.uchiru-head a {
+	font-size: 18px;
+	color: #246EA1;
+	text-decoration: none;
+}
+
+.uchiru-head__right-group {
+	display: inline-block;
+	position: absolute;
+	right: 20px;
+	top: 0;
+}
+
+.uchiru-locale-dropdown__toggle {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	font-family: "Noto Sans" !important;
+	font-size: 18px;
+	line-height: 20px;
+	padding: 4px;
+	outline: none;
+	top: 4px;
+}
+
+.uchiru-locale-dropdown__toggle__text {
+	font-family: "Noto Sans" !important;
+	font-size: 18px;
+}
+
+body .uchiru-locale-dropdown__toggle__caret {
+	margin-top: 8px;
+	margin-left: 3px;
+}
+
+.uchiru-locale-dropdown__toggle__caret {
+	font-family: "Noto Sans" !important;
+	font-size: 18px;
+	border-top: 4px solid;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	content: "";
+	vertical-align: top;
+	display: inline-block;
+	width: 0;
+	height: 0;
+}
+
+body .uchiru-locale-dropdown__menu {
+	display: none;
+	list-style-type: none;
+	padding: 5px 0;
+	margin: 2px 0 0;
+	z-index: 1000;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	font-size: 18px;
+	background-color: white;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	min-width: 160px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+	background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	-webkit-background-clip: padding-box;
+}
+
+body .uchiru-locale-dropdown__menu_pull-right {
+	right: 0;
+	left: auto;
+}
+
+body .uchiru-locale-dropdown__menu__item__link {
+	font-family: "Noto Sans" !important;
+	position: relative;
+	text-decoration: none;
+	display: block;
+	padding: 5px 20px;
+	clear: both;
+	font-weight: normal;
+	line-height: 20px;
+	color: #333333;
+	white-space: nowrap;
+}
