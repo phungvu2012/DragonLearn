@@ -21,11 +21,20 @@
 	z-index: 3;
 }
 
+#khung{
+	width: 663px;
+	height: 554px;
+	position: absolute;
+	left: 287px;
+	top: 60px;
+	z-index: 6;
+}
+
 #tail1{
 	width: 170px;
 	height: 164px;
 	background-image: url("../../Image/Load trucks with 10 berries/duoi_xe.png");
-	position: absolute;
+	position: fixed;
 	left: 398px;
 	top: 82px;
 	z-index: 6;
@@ -35,7 +44,7 @@
 	width: 170px;
 	height: 164px;
 	background-image: url("../../Image/Load trucks with 10 berries/duoi_xe.png");
-	position: absolute;
+	position: fixed;
 	left: 398px;
 	top: 252px;
 	z-index: 6;
@@ -45,7 +54,7 @@
 	width: 170px;
 	height: 164px;
 	background-image: url("../../Image/Load trucks with 10 berries/duoi_xe.png");
-	position: absolute;
+	position: fixed;
 	left: 398px;
 	top: 422px;
 	z-index: 6;
