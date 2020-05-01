@@ -1,9 +1,11 @@
 <html>
-<header>
-    <link rel="stylesheet" href="style.css">
-</header>
 
-<body>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+
+<body onload="appendBlueCube()">
     <div class="uchiru_box">
         <div class="uchiru_head card with_progress">
         </div>
@@ -11,7 +13,7 @@
             <div id="board">
                 <div class="line first_line under_start finished">
                     <div class="cubes_wrapper">
-                        <div class="cube_blue"></div>
+                        <div class="cube_blue" style="left: 10px;"></div>
                     </div>
                 </div>
             </div>
