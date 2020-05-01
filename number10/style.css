@@ -1,0 +1,28 @@
+.uchiru_box {
+    border: 1px solid green;
+    background-attachment: scroll;
+    background-attachment: border-box;
+    background-color: rgb(255, 255, 255);
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0% 0%;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-size: auto;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 19px 0px, rgba(0, 0, 0, 0.5) 0px 2px 4px 0px;
+    margin-bottom: 20px;
+    margin-left: 474px;
+    margin-right: 474px;
+    margin-top: 15px;
+    min-height: 600px;
+    position: relative;
+    width: 960px;
+    z-index: 0;
+}
+
+.uchiru_head card.with_progress {}
