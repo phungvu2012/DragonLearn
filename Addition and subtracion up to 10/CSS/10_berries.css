@@ -1,31 +1,20 @@
 @charset "utf-8";
 /* CSS Document */
 
-#background{
-	width: 1535px;
-	height: 754px;
-	background-image: url("../../Image/Load trucks with 10 berries/background1.png");
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	z-index: 5;
-}
-
-#tab{
-	width: 970px;
-	height: 609px;
-	background-image: url("../../Image/Load trucks with 10 berries/background2.png");
+#khung{
+	width: 663px;
+	height: 554px;
 	position: absolute;
 	left: 287px;
-	top: 15px;
-	z-index: 3;
+	top: 60px;
+	z-index: 6;
 }
 
 #tail1{
 	width: 170px;
 	height: 164px;
 	background-image: url("../../Image/Load trucks with 10 berries/duoi_xe.png");
-	position: absolute;
+	position: fixed;
 	left: 398px;
 	top: 82px;
 	z-index: 6;
@@ -35,7 +24,7 @@
 	width: 170px;
 	height: 164px;
 	background-image: url("../../Image/Load trucks with 10 berries/duoi_xe.png");
-	position: absolute;
+	position: fixed;
 	left: 398px;
 	top: 252px;
 	z-index: 6;
@@ -45,7 +34,7 @@
 	width: 170px;
 	height: 164px;
 	background-image: url("../../Image/Load trucks with 10 berries/duoi_xe.png");
-	position: absolute;
+	position: fixed;
 	left: 398px;
 	top: 422px;
 	z-index: 6;
