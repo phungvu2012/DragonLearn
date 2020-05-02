@@ -1,11 +1,23 @@
-function appendBlueCube() {
-    var leftPos = 10;
-    var cubeWraperElement = document.getElementsByClassName("cubes_wrapper")[0];
+function appendBlueCube(leftPos, index, time) {
+    // var leftPos = 10;
+    var cubeWraperElement = document.getElementsByClassName("cubes_wrapper")[index];
     if (!cubeWraperElement) {
         console.log("does not found cubeWraperElement");
     }
-    for (var i = 2; i < 9; i++) {
-        leftPos += 45;
+    for (var i = 0; i < time; i++) {
         cubeWraperElement.insertAdjacentHTML("beforeend", " <div class='cube_blue' style='left: " + leftPos + "px;'></div>")
+        leftPos += 45;
+    }
+}
+
+function appendRedCube(leftPos, index, time) {
+    // var leftPos = 10;
+    var cubeWraperElement = document.getElementsByClassName("cubes_wrapper")[index];
+    if (!cubeWraperElement) {
+        console.log("does not found cubeWraperElement");
+    }
+    for (var i = 0; i < time; i++) {
+        cubeWraperElement.insertAdjacentHTML("beforeend", " <div class='cube_red' style='left: " + leftPos + "px;'></div>")
+        leftPos += 45;
     }
 }

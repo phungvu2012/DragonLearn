@@ -5,16 +5,27 @@
     <script src="main.js"></script>
 </head>
 
-<body onload="appendBlueCube()">
+<body onload="appendRedCube(10,0,10)">
     <div class="uchiru_box">
-        <div class="uchiru_head card with_progress">
+        <div class="uchiru_head">
+            <a class="back-link">
+                <div class="arrow-left"></div>
+                <span>Back</span>
+            </a>
         </div>
+
         <div class="card_content">
             <div id="board">
-                <div class="line first_line under_start finished">
+                <div class="line">
                     <div class="cubes_wrapper">
                         <div class="cube_blue" style="left: 10px;"></div>
+                        <div class="brace_top" style="top: -14px; left: 8px; width: 472px;">
+                            <div class="corner_white" style="left: 228px;"></div>
+                            <div class="corner_gray" style="left: 228px;"></div>
+                            <div class="brace_round_hint">10</div>
+                        </div>
                     </div>
+                    <div class="example"></div>
                 </div>
             </div>
         </div>
