@@ -21,3 +21,8 @@ function appendRedCube(leftPos, index, time) {
         leftPos += 45;
     }
 }
+
+function append2Row() {
+    appendBlueCube(10, 0, 10);
+    appendBlueCube(10, 1, 9);
+}
