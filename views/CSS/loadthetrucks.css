@@ -27,6 +27,7 @@
 	-webkit-user-select: none;
 }
 
+
 .line {
 	margin-top: 0;
 	font-size: 45px;
@@ -57,6 +58,7 @@
 	width: 100%;
 	position: relative;
 	height: 345px;
+	opacity: 0.4;
 }
 
 .truck {
@@ -165,6 +167,13 @@ div .smoke_gen {
     display: none;
 }
 
+.under_start {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    filter: blur(5px);
+    -webkit-transform: translate3d(0,0,0);
+}
+
 .under_start.finished{
     -webkit-filter: none;
     -moz-filter: none;
@@ -177,6 +186,7 @@ div .smoke_gen {
     margin-top: 5px;
     text-align: right;
     margin-right: 187px;
+    opacity: 0.4;
 }
 
 .button {
@@ -213,10 +223,11 @@ div .smoke_gen {
     position: absolute;
     z-index: 3;
     transition: box-shadow .3s;
+    opacity: 0.4;
 }
 
 .to_load_brick .cap {
-    position: absolute;
+    position: absolute;	
     width: 60px;
     height: 28px;
     left: 0;

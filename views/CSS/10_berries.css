@@ -2,11 +2,11 @@
 /* CSS Document */
 
 #khung{
-	width: 663px;
+	width: 675px;
 	height: 554px;
 	position: absolute;
-	left: 287px;
-	top: 60px;
+	left: 0px;
+	top: 48px;
 	z-index: 6;
 }
 
@@ -14,9 +14,9 @@
 	width: 170px;
 	height: 164px;
 	background-image: url("../../Image/Load trucks with 10 berries/duoi_xe.png");
-	position: fixed;
-	left: 398px;
-	top: 82px;
+	position: absolute;
+	left: 100px;
+	top: 17px;
 	z-index: 6;
 }
 
@@ -24,9 +24,9 @@
 	width: 170px;
 	height: 164px;
 	background-image: url("../../Image/Load trucks with 10 berries/duoi_xe.png");
-	position: fixed;
-	left: 398px;
-	top: 252px;
+	position: absolute;
+	left: 100px;
+	top: 197px;
 	z-index: 6;
 }
 
@@ -34,9 +34,9 @@
 	width: 170px;
 	height: 164px;
 	background-image: url("../../Image/Load trucks with 10 berries/duoi_xe.png");
-	position: fixed;
-	left: 398px;
-	top: 422px;
+	position: absolute;
+	left: 100px;
+	top: 374px;
 	z-index: 6;
 }
 
@@ -45,8 +45,8 @@
 	height: 162px;
 	background-image: url("../../Image/Load trucks with 10 berries/dau_xe.png");
 	position: absolute;
-	left: 950px;
-	top: 82px;
+	left: 675px;
+	top: 65px;
 	z-index: 4;
 }
 
@@ -55,8 +55,8 @@
 	height: 162px;
 	background-image: url("../../Image/Load trucks with 10 berries/dau_xe.png");
 	position: absolute;
-	left: 950px;
-	top: 252px;
+	left: 675px;
+	top: 245px;
 	z-index: 4;
 }
 
@@ -65,7 +65,7 @@
 	height: 162px;
 	background-image: url("../../Image/Load trucks with 10 berries/dau_xe.png");
 	position: absolute;
-	left: 950px;
+	left: 675px;
 	top: 422px;
 	z-index: 4;
 }
