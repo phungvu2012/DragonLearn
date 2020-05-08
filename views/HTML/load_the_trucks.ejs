@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<title>Load the trucks</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/server/views/CSS/Normalize.css" />
+	<link rel="stylesheet" type="text/css" href="/server/views/CSS/background_game.css">
+	<link rel="stylesheet" type="text/css" href="/server/views/CSS/khung_game.css">
+	<link rel="stylesheet" type="text/css" href="/server/views/CSS/loadthetrucks.css">
+	<link rel="stylesheet" type="text/css" href="/server/views/CSS/btn_start.css">
+	<link rel="shortcut icon" href="#" />
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<div class="uchiru">
+	<div class="uchiru-bg-cell"></div>
+	<div class="uchiru-bg-color"></div>
+	<div class="uchiru-bg-stuff"></div>
+	<img class="uchiru-bg-color" src="/server/Image/Background/grad-f07e854ce64f9aee2db7bd67146ff0e4800feeed40c8f7116fcb3b6a048deb64.jpg" />
+	<div class="uchiru-box">
+		<div class="uchiru-head">
+			<a class="back-link" href="/server/views/additionAndSuntractionUpTo10.html">
+				<div class="arrow-left"></div>
+				<span>Back</span>
+			</a>
+			<div class="uchiru-head__right-group">
+				<a class="uchiru-locale-dropdown__toggle" href="#">
+					<span class="uchiru-locale-dropdown__toggle__text">English</span>
+					<span class="uchiru-locale-dropdown__toggle__caret"></span>
+				</a>
+				<ul class="uchiru-locale-dropdown__menu uchiru-locale-dropdown__menu_pull-right">
+					<li class="uchiru-locale-dropdown__menu_item">
+						<a href="#" class="uchiru-locale-dropdown__menu__item__link">English</a>
+					</li>
+					<li class="uchiru-locale-dropdown__menu_item">
+						<a href="#" class="uchiru-locale-dropdown__menu__item__link">Việt Nam</a>
+					</li>
+				</ul>
+			</div>
+			<div class="beads-wrapper">
+				<div class="progress">
+					<div class="inner_progess">
+						<i class="az_ball_0" id="bead0" style="left: 4px;"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card-content">
+			<!-- Viết code ở đây-->
+			<div id="board" class="uchiru-place card player-1 fixed" style>
+				<div class="cont">
+					<div class="line">
+						<span class="with-sound">
+							<span class="speaker" onclick="play()">
+								<audio src="" style="display: hidden"></audio>
+							</span>
+					    	Load the trucks to the top
+						</span>
+					</div>
+					<div class="scene under_start" >
+						<div class="truck">
+							<div class="smoke_gen"></div>
+							<div class="brick_holder">
+								<div class="loaded_brick" style="height: 141.2px;">
+									<div class="cap"></div>
+									<span>6</span>
+								</div>
+								<div class="loaded_brick" style="height: 165.4px;">
+									<div class="cap"></div>
+									<span>7</span>
+								</div>
+								<div class="loaded_brick" style="height: 189.6px;">
+									<div class="cap"></div>
+									<span>8</span>
+								</div>
+								<div class="loaded_brick" style="height: 213.8px;">
+									<div class="cap"></div>
+									<span>9</span>
+								</div>
+								<div class="loaded_brick" style="height: 238px;">
+									<div class="cap"></div>
+									<span>10</span>
+								</div>
+							</div>
+							<div class="wheel wheel_0"></div>
+							<div class="wheel wheel_1"></div>
+							<div class="wheel wheel_2"></div>
+						</div>
+						<div class="placeholder" style="height: 238px; left: 429px; top: 19px;"><div class="highlight" style="height: 92.8px;"><i></i></div></div>
+						<div class="placeholder" style="height: 238px; left: 494px; top: 19px;"><div class="highlight" style="height: 68.6px;"><i></i></div></div>
+						<div class="placeholder" style="height: 238px; left: 559px; top: 19px;"><div class="highlight" style="height: 44.4px;"><i></i></div></div>
+						<div class="placeholder" style="height: 238px; left: 624px; top: 19px;"><div class="highlight" style="height: 20.2px;"><i></i></div></div>
+					</div>
+					<!--finished -->
+					<div class="button_place under_start">
+						<div class="button gradient disabled">
+							<span>Ready to go!</span>
+						</div>
+					</div>
+					<!-- finished, openhand -->
+					<div class="to_load_brick under_start" style="height: 44px; left: 147px; top: 279.6px; touch-action: none;"><div class="cap"></div><span>2</span></div>
+					<div class="to_load_brick small under_start" style="height: 20px; left: 212px; top: 303.8px; touch-action: none;"><div class="cap"></div><span>1</span></div>
+					<div class="to_load_brick under_start" style="height: 92px; left: 277px; top: 231.2px; touch-action: none;"><div class="cap"></div><span>4</span></div>
+					<div class="to_load_brick under_start" style="height: 68px; left: 342px; top: 255.4px; touch-action: none;"><div class="cap"></div><span>3</span></div>
+					<div class="btn_play"  onclick="startLesson()">
+						<div class="triangle">
+							<span>Start</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+<script type="text/javascript" src="server/views/JS/loadthetrucks.js">
+
+</script>
+
+</body>
+</html>

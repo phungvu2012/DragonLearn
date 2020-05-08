@@ -1,0 +1,61 @@
+@font-face {
+	src: url(../../Font/CirceRounded-Regular.otf);
+	font-family: CirceRounded-Alt-Bold;
+}
+@font-face{
+	src: url(../../Font/Circe-Regular.ttf);
+	font-family: Circe-Regular;
+}
+
+.main--content {
+	box-sizing: border-box;
+	width: 1024px;
+	padding: 0 18px 40px;
+	margin: 0 auto;
+}
+
+.teachers-new-slim {
+	padding-top: 0;
+}
+
+.t-card-completed {
+	width: 100%;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+.t-card-completed--title {
+	font-size: 32px;
+	line-height: 32px;
+	font-family: 'CirceRounded-Alt-Bold', sans-serif;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.t-card-completed--congrats  {
+	height: 290px;
+	margin-bottom: 20px;
+	background-image: url(../../Image/complete-card-21a84b96681981b0362780d2af61cf19.png);
+	background-repeat: no-repeat;
+	background-position: top center; 
+}
+
+.t-card-completed--button {
+	text-align: center;
+	font-family: "Circe-Regular", sans-serif;
+}
+
+.t-card-completed--button a {
+
+	text-decoration: none;
+	font-size: 29px;
+	background: #66c3e6;
+	color: white;
+	display: inline-block;
+	padding: 12px 20px 8px;
+	border-radius: 7px;
+	transition: background-color 0.2s easy-in;
+	-moz-transition: background-color 0.2s easy-in;
+}
+.t-card-completed--button a:hover {
+	background-color: #60bce0
+}

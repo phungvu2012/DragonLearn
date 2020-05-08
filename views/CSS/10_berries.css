@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+
+#khung{
+	width: 675px;
+	height: 554px;
+	position: absolute;
+	left: 0px;
+	top: 48px;
+	z-index: 6;
+}
+
+#tail1{
+	width: 170px;
+	height: 164px;
+	background-image: url("../../Image/Load trucks with 10 berries/duoi_xe.png");
+	position: absolute;
+	left: 100px;
+	top: 17px;
+	z-index: 6;
+}
+
+#tail2{
+	width: 170px;
+	height: 164px;
+	background-image: url("../../Image/Load trucks with 10 berries/duoi_xe.png");
+	position: absolute;
+	left: 100px;
+	top: 197px;
+	z-index: 6;
+}
+
+#tail3{
+	width: 170px;
+	height: 164px;
+	background-image: url("../../Image/Load trucks with 10 berries/duoi_xe.png");
+	position: absolute;
+	left: 100px;
+	top: 374px;
+	z-index: 6;
+}
+
+#head1{
+	width: 215px;
+	height: 162px;
+	background-image: url("../../Image/Load trucks with 10 berries/dau_xe.png");
+	position: absolute;
+	left: 675px;
+	top: 65px;
+	z-index: 4;
+}
+
+#head2{
+	width: 215px;
+	height: 162px;
+	background-image: url("../../Image/Load trucks with 10 berries/dau_xe.png");
+	position: absolute;
+	left: 675px;
+	top: 245px;
+	z-index: 4;
+}
+
+#head3{
+	width: 215px;
+	height: 162px;
+	background-image: url("../../Image/Load trucks with 10 berries/dau_xe.png");
+	position: absolute;
+	left: 675px;
+	top: 422px;
+	z-index: 4;
+}
+
+
+
+
+

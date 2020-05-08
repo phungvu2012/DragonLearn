@@ -1,0 +1,250 @@
+.fixed{
+	width: 960px;
+	min-height: 483px;
+}
+
+.uchiru-place {
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	padding-top: 1px;
+	margin-top: -1px;
+	line-height: 1.5;
+}
+
+.card .cont {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.player-1 {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+
+.line {
+	margin-top: 0;
+	font-size: 45px;
+}
+
+.player-1 .speaker {
+	touch-action: none;
+	position: relative;
+	margin-right: 10px;
+	width: 35px;
+	height: 35px;
+	margin-bottom: -1px;
+	background-image: url(../../Image/speaker-5ea19d9cdf5f069d106aec8a03b3faca0929b20a13b8b588a58efe79c8f11ae6.png);
+	background-size: 100%;
+	display: inline-block;
+	border-radius: 50%;
+	background-position: 0 0;
+	opacity: 0.8;
+}
+
+.speaker:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+.scene {
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	height: 345px;
+	opacity: 0.4;
+}
+
+.truck {
+	position: absolute;
+	width: 513px;
+	height: 338px;
+	bottom: 0;
+	left: 423px;
+	background: url('../../Image/Load the trucks/17.png') 0 -462px no-repeat;
+}
+
+div .smoke_gen {
+	position: absolute;
+    z-index: 10;
+    top: -15px;
+    right: 110px;
+    width: 85px;
+    height: 86px;
+    opacity: .35;
+}
+
+.brick_holder {
+    position: absolute;
+    z-index: 1;
+    width: 330px;
+    height: 238px;
+    top: 12px;
+    display: inline-block;
+    vertical-align: bottom;
+    left: 0;
+    text-align: left;
+    padding-left: 1px;
+    transition: box-shadow .3s;
+}
+
+.loaded_brick {
+    width: 60px;
+    display: inline-block;
+    vertical-align: bottom;
+    background: url('../../Image/Load the trucks/18(60x238).png') 0 100% no-repeat;
+    margin-left: 2px;
+    position: relative;
+}
+
+.loaded_brick .cap {
+    position: absolute;
+    width: 44px;
+    height: 4px;
+    left: 50%;
+    margin-left: -22px;
+    top: 4px;
+    background: url('../../Image/Load the trucks/17.png') -194px -13px no-repeat;
+}
+
+.loaded_brick span {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    font-size: 22px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: -11px;
+    color: #fff;
+    width: 100%;
+}
+
+.wheel {
+    position: absolute;
+    z-index: 2;
+    width: 55px;
+    height: 55px;
+    bottom: 8px;
+    background: url(17.png) -38px -373px no-repeat;
+    border-radius: 30px;
+    border-spacing: 0;
+    -moz-transform: rotate(0);
+    transform: rotate(0);
+}
+
+.wheel.wheel_0 {
+    left: 93px;
+}
+
+.wheel.wheel_1 {
+    left: 166px;
+}
+
+.wheel.wheel_2 {
+    left: 398px;
+}
+
+.placeholder {
+    position: absolute;
+    z-index: 2;
+    width: 60px;
+}
+
+.highlight {
+    background: rgba(246,255,158,.25);
+    width: 60px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.under_start {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    filter: blur(5px);
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.under_start.finished{
+    -webkit-filter: none;
+    -moz-filter: none;
+    filter: none;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.button_place {
+    margin-top: 5px;
+    text-align: right;
+    margin-right: 187px;
+    opacity: 0.4;
+}
+
+.button {
+    display: inline-block;
+    height: 41px;
+    padding: 0 20px;
+    border-radius: 26px;
+    border-top: 5px solid #C3F789;
+    border-left: 5px solid #B6ED6B;
+    border-bottom: 5px solid #AAE34F;
+    border-right: 5px solid #B6EC6B;
+    box-shadow: 1px 2px 0 0 #5e926f, inset 0 5px 5px 0 rgba(36,114,55,.6), inset 0 2px 2px 0 rgba(0,0,0,.2);
+    background: #3CB658;
+    transition: box-shadow .3s;
+}
+
+.button span {
+    display: block;
+    white-space: nowrap;
+    font-size: 28px;
+    line-height: 28px;
+    padding: 7px 0 6px;
+    text-shadow: 0 2px 0 rgba(0,0,0,.3);
+    color: #FFF;
+}
+
+.button_place:hover .button {
+    background-color: #C3F789;
+}
+
+.to_load_brick {
+    width: 60px;
+    background: url('../../Image/Load the trucks/19.png') 0 100% no-repeat;
+    position: absolute;
+    z-index: 3;
+    transition: box-shadow .3s;
+    opacity: 0.4;
+}
+
+.to_load_brick .cap {
+    position: absolute;	
+    width: 60px;
+    height: 28px;
+    left: 0;
+    top: 0;
+    background: url('../../Image/Load the trucks/17.png') -8px -9px no-repeat;
+}
+
+.to_load_brick span {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    font-size: 22px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: -11px;
+    color: #000;
+    text-shadow: 0 1px 1px #fff;
+    width: 100%;
+}
