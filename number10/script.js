@@ -1,3 +1,28 @@
+// function logKey(e) {
+//     console.log(e.code);
+// }
+// document.addEventListener("DOMContentLoaded", function() {
+//     var board = document.getElementById("board");
+//     console.log(board);
+//     board.addEventListener('keypress', function(e) {
+//         console.log(e);
+//     });
+//     // this function runs when the DOM is ready, i.e. when the document has been parsed
+//     // document.getElementById("user-greeting").textContent = "Welcome back, Bart";
+// });
+
+// var board = document.getElementById("board");
+// console.log(board);
+// board.addEventListener('keypress', function(e) {
+//     console.log(e);
+// });
+
+document.onkeypress = function(event) {
+    const isNumber = /^[0-9]$/i.test(event.key);
+    console.log(event);
+    console.log("is number --> " + isNumber);
+}
+
 function appendBlueCube(leftPos, index, time) {
     // var leftPos = 10;
     var cubeWraperElement = document.getElementsByClassName("cubes_wrapper")[index];
