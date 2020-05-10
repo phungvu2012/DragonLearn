@@ -1,0 +1,50 @@
+.card .btn_play {
+	position: absolute;
+	z-index: 100;	
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	width: 246px;
+	height: 246px;
+	margin: -166px 0 0 -166px;
+	border-radius: 200px;
+	background-color: rgba(184,0,161,.1);
+	border: 43px solid rgba(255,255,255,.75);
+	transition: linear .2s;
+	-moz-transition: linear .2s;
+	-webkit-transition: linear .2s;
+	cursor: pointer;
+	transition: 0.5s;
+	display: block;
+}
+
+.btn_play:hover {
+	padding: 10px;
+}
+
+.triangle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 112px;
+	height: 113px;
+	background: url(../../Image/9.png);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	margin: -57px 0 0 -35px;
+	transition: 2s;
+}
+
+.btn_play:hover .triangle {
+	background-position: 0px -113px;
+}
+
+.card .btn_play span {
+	position: absolute;
+	top: 50%;
+	font-size: 20px;
+	margin-top: -12px;
+	left: 18px;
+	color: white;
+}
+

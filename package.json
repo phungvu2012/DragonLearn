@@ -1,0 +1,24 @@
+{
+  "name": "dragonlearn",
+  "version": "1.0.0",
+  "description": "<h1> DragonLearn </h1>\r <br/>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phungvu2012/DragonLearn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phungvu2012/DragonLearn/issues"
+  },
+  "homepage": "https://github.com/phungvu2012/DragonLearn#readme",
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "google-tts-api": "0.0.4"
+  }
+}
