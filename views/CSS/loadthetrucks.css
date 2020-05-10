@@ -99,7 +99,7 @@ div .smoke_gen {
     display: inline-block;
     vertical-align: bottom;
     background: url('../../Image/Load the trucks/18(60x238).png') 0 100% no-repeat;
-    margin-left: 2px;
+    margin-left: 5px;
     position: relative;
 }
 
@@ -132,7 +132,7 @@ div .smoke_gen {
     width: 55px;
     height: 55px;
     bottom: 8px;
-    background: url(17.png) -38px -373px no-repeat;
+    background: url('../../Image/Load the trucks/17.png') -38px -373px no-repeat;
     border-radius: 30px;
     border-spacing: 0;
     -moz-transform: rotate(0);
@@ -155,6 +155,8 @@ div .smoke_gen {
     position: absolute;
     z-index: 2;
     width: 60px;
+    height: 238px;
+    top: 19px;
 }
 
 .highlight {
@@ -213,8 +215,18 @@ div .smoke_gen {
     color: #FFF;
 }
 
-.button_place:hover .button {
-    background-color: #C3F789;
+
+
+.button:not(.disabled):hover {
+    cursor: pointer;
+    text-decoration: none;
+    background: #3BCA3B;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: .5;
 }
 
 .to_load_brick {
@@ -247,4 +259,32 @@ div .smoke_gen {
     color: #000;
     text-shadow: 0 1px 1px #fff;
     width: 100%;
+}
+
+.openhand {
+    cursor: url('../../Image/open-hand-svgrepo-com.svg'), pointer;
+}
+
+.placeholder .highlight{
+	background:rgba(246,255,158,.25);
+	width:60px;
+	position:absolute;
+	z-index:1;
+	top:0;
+	left:0;
+	display:none
+}
+
+.card .placeholder .highlight i{
+	position:absolute;
+	z-index:1;
+	top:100%;
+	left:0; 
+	width:60px;
+	height:29px;
+	margin-top:4px;
+	background:url('../../Image/Load the trucks/17.png') -40px -309px no-repeat
+}
+.card .placeholder.highlighted .highlight{
+		display:block
 }

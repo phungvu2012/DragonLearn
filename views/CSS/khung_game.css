@@ -132,3 +132,36 @@ body .uchiru-locale-dropdown__menu__item__link {
 	color: #333333;
 	white-space: nowrap;
 }
+
+.beads-wrapper {
+    font-size: 14px;
+    text-align: center;
+    margin-top: -54px;
+    padding: 0 80px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+}
+
+
+.inner_progress {
+    margin: 0 auto;
+    width: 465px;
+    height: 26px;
+    border-radius: 16px;
+    background: #EDEDED;
+    box-shadow: inset 0px 1px 1px 0px rgba(0,0,0,0.22), inset 0px 1px 3px 0px rgba(0,0,0,0.18);
+    position: relative;
+}
+
+.inner_progress i {
+    display: block;
+    width: 21px;
+    height: 21px;
+    border-radius: 10px;
+    background-image: url('../../Image/bead-874cc643b18fbe33aacee82d8f4353eec013afca7486232ce8e36adbbae9eeb6.png');
+    position: absolute;
+    top: 3px;
+    transition: left 200ms linear;
+    -webkit-transition: left 200ms linear;
+}
