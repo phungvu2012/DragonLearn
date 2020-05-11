@@ -20,9 +20,10 @@ function outBox(objtail, objhead) {
 }
 // Main code
 $(document).ready(function() {
-	var objbox = document.getElementById("box");
-	var xPosBox = objbox.offsetLeft;
-	var yPosBox = objbox.offsetTop;
+	var objKhung = document.getElementById("khung");
+	var offsetK = $(objKhung).offset();
+	var xPosKhung = offsetK.left;
+	var yPosKhung = offsetK.top;
 	var objtail1 = document.getElementById("tail1");
 	var objtail2 = document.getElementById("tail2");
 	var objtail3 = document.getElementById("tail3");
@@ -42,15 +43,15 @@ $(document).ready(function() {
         var yPos = offset.top;
         //$('#posX').text('x: ' + xPos);
         //$('#posY').text('y: ' + yPos);
-		if(yPos >= yPosBox && yPos <= yPosBox + 130 && xPos >= xPosBox + 490) {
+		if(yPos >= yPosKhung && yPos <= yPosKhung + 82 && xPos >= xPosKhung + 490) {
 			$(this).draggable("option", "revert", false);
 		}
 		else
-		if(yPos >= yPosBox + 180 && yPos <= yPosBox + 310 && xPos >= xPosBox + 490) {
+		if(yPos >= yPosKhung + 132 && yPos <= yPosKhung + 262 && xPos >= xPosKhung + 490) {
 			$(this).draggable("option", "revert", false);
 		}
 		else
-		if(yPos >= yPosBox + 360 && yPos <= yPosBox + 490 && xPos >= xPosBox + 490) {
+		if(yPos >= yPosKhung + 312 && yPos <= yPosKhung + 442 && xPos >= xPosKhung + 490) {
 			$(this).draggable("option", "revert", false);
 		}
 		else $(this).draggable("option", "revert", true);
@@ -64,7 +65,7 @@ $(document).ready(function() {
         var yPos = offset.top;
         //$('#posX').text('x: ' + xPos);
         //$('#posY').text('y: ' + yPos);
-		if(yPos >= yPosBox && yPos <= yPosBox + 130 && xPos >= xPosBox + 490) {
+		if(yPos >= yPosKhung && yPos <= yPosKhung + 82 && xPos >= xPosKhung + 490) {
 			objtail1.style.left = "505px";
 			objtail1.style.top = "17px";
 			if(currentNumberOnTail[0] + currentNumberOnHead[0] != 10) {
@@ -78,7 +79,7 @@ $(document).ready(function() {
 			else outBox(objtail1, objhead1);
 		}
 		else
-		if(yPos >= yPosBox + 180 && yPos <= yPosBox + 310 && xPos >= xPosBox + 490) {
+		if(yPos >= yPosKhung + 132 && yPos <= yPosKhung + 262 && xPos >= xPosKhung + 490) {
 			objtail1.style.left = "505px";
 			objtail1.style.top = "197px";
 			if(currentNumberOnTail[0] + currentNumberOnHead[1] != 10) {
@@ -92,7 +93,7 @@ $(document).ready(function() {
 			else outBox(objtail1, objhead2);
 		}
 		else
-		if(yPos >= yPosBox + 360 && yPos <= yPosBox + 490 && xPos >= xPosBox + 490) {
+		if(yPos >= yPosKhung + 312 && yPos <= yPosKhung + 442 && xPos >= xPosKhung + 490) {
 			objtail1.style.left = "505px";
 			objtail1.style.top = "374px";
 			if(currentNumberOnTail[0] + currentNumberOnHead[2] != 10) {
@@ -115,7 +116,7 @@ $(document).ready(function() {
         var yPos = offset.top;
         //$('#posX').text('x: ' + xPos);
         //$('#posY').text('y: ' + yPos);
-		if(yPos >= yPosBox && yPos <= yPosBox + 130 && xPos >= xPosBox + 490) {
+		if(yPos >= yPosKhung && yPos <= yPosKhung + 82 && xPos >= xPosKhung + 490) {
 			objtail2.style.left = "505px";
 			objtail2.style.top = "17px";
 			if(currentNumberOnTail[1] + currentNumberOnHead[0] != 10) {
@@ -129,7 +130,7 @@ $(document).ready(function() {
 			else outBox(objtail2, objhead1);
 		}
 		else
-		if(yPos >= yPosBox + 180 && yPos <= yPosBox + 310 && xPos >= xPosBox + 490) {
+		if(yPos >= yPosKhung + 132 && yPos <= yPosKhung + 262 && xPos >= xPosKhung + 490) {
 			objtail2.style.left = "505px";
 			objtail2.style.top = "197px";
 			if(currentNumberOnTail[1] + currentNumberOnHead[1] != 10) {
@@ -143,7 +144,7 @@ $(document).ready(function() {
 			else outBox(objtail2, objhead2);
 		}
 		else
-		if(yPos >= yPosBox + 360 && yPos <= yPosBox + 490 && xPos >= xPosBox + 490) {
+		if(yPos >= yPosKhung + 312 && yPos <= yPosKhung + 442 && xPos >= xPosKhung + 490) {
 			objtail2.style.left = "505px";
 			objtail2.style.top = "374px";
 			if(currentNumberOnTail[1] + currentNumberOnHead[2] != 10) {
@@ -166,7 +167,7 @@ $(document).ready(function() {
         var yPos = offset.top;
         //$('#posX').text('x: ' + xPos);
         //$('#posY').text('y: ' + yPos);
-		if(yPos >= yPosBox && yPos <= yPosBox + 130 && xPos >= xPosBox + 490) {
+		if(yPos >= yPosKhung && yPos <= yPosKhung + 82 && xPos >= xPosKhung + 490) {
 			objtail3.style.left = "505px";
 			objtail3.style.top = "17px";
 			if(currentNumberOnTail[2] + currentNumberOnHead[0] != 10) {
@@ -180,7 +181,7 @@ $(document).ready(function() {
 			else outBox(objtail3, objhead1);
 		}
 		else
-		if(yPos >= yPosBox + 180 && yPos <= yPosBox + 310 && xPos >= xPosBox + 490) {
+		if(yPos >= yPosKhung + 132 && yPos <= yPosKhung + 262 && xPos >= xPosKhung + 490) {
 			objtail3.style.left = "505px";
 			objtail3.style.top = "197px";
 			if(currentNumberOnTail[2] + currentNumberOnHead[1] != 10) {
@@ -194,7 +195,7 @@ $(document).ready(function() {
 			else outBox(objtail3, objhead2);
 		}
 		else
-		if(yPos >= yPosBox + 360 && yPos <= yPosBox + 490 && xPos >= xPosBox + 490) {
+		if(yPos >= yPosKhung + 312 && yPos <= yPosKhung + 442 && xPos >= xPosKhung + 490) {
 			objtail3.style.left = "505px";
 			objtail3.style.top = "374px";
 			if(currentNumberOnTail[2] + currentNumberOnHead[2] != 10) {
