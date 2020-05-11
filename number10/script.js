@@ -21,6 +21,80 @@ document.onkeypress = function(event) {
     const isNumber = /^[0-9]$/i.test(event.key);
     console.log(event);
     console.log("is number --> " + isNumber);
+    if(isNumber)
+    {
+        
+    }
+    // input_Box();
+}
+
+function genInline_input_disable() {
+    var inline_input = document.createElement("div");
+    inline_input.classList.add("inline_input");
+    inline_input.classList.add("disabled");
+    var __inner = document.createElement("div");
+    __inner.classList.add("__inner");
+    var __outer = document.createElement("div");
+    __outer.classList.add("__outer");
+    var span = document.createElement("span");
+    // span.textContent = '&nbsp;';
+    __outer.appendChild(__inner);
+    __inner.appendChild(span);
+    inline_input.appendChild(__outer);
+    return inline_input;
+}
+
+function genResult_Inline_input_blank() {
+    var inline_input = document.createElement("div");
+    inline_input.classList.add("inline_input");
+    inline_input.classList.add("blank");
+    var __inner = document.createElement("div");
+    __inner.classList.add("__inner");
+    var __outer = document.createElement("div");
+    __outer.classList.add("__outer");
+    var span = document.createElement("span");
+    var span2 = document.createElement("span");
+    span.textContent = '1';
+    span2.textContent = '0';
+    __outer.appendChild(__inner);
+    __inner.appendChild(span);
+    __inner.appendChild(span2);
+    inline_input.appendChild(__outer);
+    return inline_input;
+}
+function genleftExample()
+{
+    var lines = document.getElementsByClassName("line");
+    for(var i = 0; i < lines.length; i++)
+    {
+        gen_all_example_children(lines[i]);
+    }
+}
+
+function gen_all_example_children(lineElement) {
+
+    var inline_input_disable = genInline_input_disable();
+    var addOperator = document.createElement("span");
+    addOperator.textContent = '+';
+    var inline_input_disable2 = genInline_input_disable();
+    var equalOperator = document.createElement("span");
+    equalOperator.textContent = '=';
+    var finalValue = genResult_Inline_input_blank();
+
+    // var example = document.getElementsByClassName("example")[line];
+    var example = lineElement.getElementsByClassName('example')[0];
+    if(!example)
+    {
+        console.log("does not found example at class line" + line);
+        return;
+    }
+    example.appendChild(inline_input_disable);
+    example.appendChild(addOperator);
+    example.appendChild(inline_input_disable2);
+    example.appendChild(equalOperator);
+    example.appendChild(finalValue);
+
+
 }
 
 function appendBlueCube(leftPos, index, time) {
@@ -78,13 +152,14 @@ function startGame() {
     appendCubeWrapperClass();
     appendExampleClass();
     appendLeftLine();
+    genleftExample();
 }
 
 function appendLeftLine() {
-    var totalLines = 10;
-    var totalCubes = 10;
+    var totalLines = 9;
+    // var totalCubes = 10;
     for (var i = 1; i <= totalLines; i++) {
-        appendBluenRedCube(10, i, totalLines - i, i);
+        appendBluenRedCube(10, i, totalLines - i+1, i);
     }
 }
 
@@ -127,7 +202,7 @@ function removeUnder_Start() {
 function onBtn_playClicked() {
     disableBtn_Play();
     removeUnder_Start();
-    // startGame();
+    startGame();
 }
 
 function appendoneEx() {
