@@ -26,13 +26,13 @@
 				<div class="arrow-left"></div>
 				<span>Back</span>
 			</a>
-			<div class="uchiru-head__right-group">
+			<div class="uchiru-head__right-group"  onclick="selectLanguage()">
 				<a class="uchiru-locale-dropdown__toggle" href="#">
 					<span class="uchiru-locale-dropdown__toggle__text">English</span>
 					<span class="uchiru-locale-dropdown__toggle__caret"></span>
 				</a>
-				<ul class="uchiru-locale-dropdown__menu uchiru-locale-dropdown__menu_pull-right">
-					<li class="uchiru-locale-dropdown__menu_item">
+				<ul class="uchiru-locale-dropdown__menu uchiru-locale-dropdown__menu_pull-right" style='display: none'>
+					<li class="uchiru-locale-dropdown__menu_item"> 
 						<a href="#" class="uchiru-locale-dropdown__menu__item__link">English</a>
 					</li>
 					<li class="uchiru-locale-dropdown__menu_item">
@@ -65,7 +65,7 @@
 						</span>
 					</div>
 					<div class="scene under_start" >
-						<div class="truck">
+						<div class="truck" style="">
 							<div class="smoke_gen"></div>
 							<div class="brick_holder">
 								<!--
@@ -95,28 +95,28 @@
 							<div class="wheel wheel_1"></div>
 							<div class="wheel wheel_2"></div>
 						</div>
-						<div class="placeholder" style="left: 429px;">
-							<div class="highlight" style="height: 92.8px;" ><i></i></div></div>
+						<div class="placeholder element0" style="left: 429px; height: 238px; top: 19px;">
+							<div class="highlight element0" style="height: 92.8px;" ><i class="element0"></i></div></div>
 								
 							
-						<div class="placeholder" style=" left: 494px;">
-							<div class="highlight" style="height: 68.6px;"><i></i></div></div>
+						<div class="placeholder element1" style=" left: 494px; height: 238px; top: 19px;">
+							<div class="highlight element1" style="height: 68.6px;"><i class="element1"></i></div></div>
 							
 							
 						
-						<div class="placeholder" style="left: 559px;">
-							<div class="highlight" style="height: 44.4px;"><i></i></div></div>
+						<div class="placeholder element2" style="left: 559px; height: 238px; top: 19px;">
+							<div class="highlight element2" style="height: 44.4px;"><i class="element2"></i></div></div>
 								
 							
 						
-						<div class="placeholder" style="left: 624px;">
-							<div class="highlight" style="height: 20.2px;"><i></i></div></div>
+						<div class="placeholder element3" style="left: 624px; height: 238px; top: 19px;">
+							<div class="highlight element3" style="height: 20.2px;"><i class="element3"></i></div></div>
 								
 							
 						
 					</div>
 					<!--finished -->
-					<div class="button_place under_start">
+					<div class="button_place under_start" >
 						<div class="button gradient disabled">
 							<span>Ready to go!</span>
 						</div>
@@ -138,72 +138,85 @@
 			</div>
 		</div>
 	</div>
-	</div>
+</div>
 
 
-<script type="text/javascript" src="server/views/JS/createElement_LoadTheTrucks.js"></script>
 <script type="text/javascript" src="server/views/JS/loadthetrucks.js"></script>
+<script type="text/javascript" src="server/views/JS/createElement_LoadTheTrucks.js"></script>
+<script type="text/javascript" src="server/views/JS/event_loadTheTrucks.js"></script>
+
 <script type="text/javascript">
-	createBricks(data.right);
-	createToLoadBricks(data.left);
+	var part = 1;
 
-	function handleDragStart(event) {
-		this.style.opacity = '0.4';
-		event.dataTransfer.effectAllowed = 'move';
-		event.dataTransfer.setData('text/html', event.target.getAttribute('class'));
-		return true;
-	}
+	function handleDrop(event) {
+		if(document.getElementsByClassName('scene')[0].classList.toString().indexOf('disabled') > -1) return false;
+		if(this.classList.toString().indexOf('done') === -1 && this.classList.toString().indexOf('placeholder') > -1){
+			if (event.stopPropagation) {
+			    event.stopPropagation(); // stops the browser from redirecting.
+			}
+			var data = event.dataTransfer.getData('text/html'),
+			  	elementSource = document.getElementsByClassName(data)[0];
+			var index = this.classList[1].slice(-1),
+				indexData = data.split(' ')[2].slice(-1);
+			event.target.appendChild(elementSource);
 
-	function handleDragEnd(event) {
-		this.style.opacity = 1;
-		var placeHolder = document.getElementsByClassName('placeholder');
-		[].forEach.call(placeHolder, function(holder) {
-			holder.classList.remove('highlighted');
-		});
-	}
-
-	function handleDragOver(event) {
-		if(event.preventDefault) {
-			event.preventDefault();
-		}
-		event.dataTransfer.dropEffect = 'move';
+			var brickInTheTruck = Number(document.getElementsByClassName('loaded_brick')[index].style.height.replace('px', '')),
+				heightHolder = Number(this.style.height.replace('px', ''))
+				brickSelect = Number(elementSource.style.height.replace('px', ''));
+			elementSource.style.left = 0;
+			elementSource.style.top = heightHolder - brickInTheTruck - brickSelect - 4 +'px';
+			this.classList.add('done');
+			console.log(this)
+			// Người dùng có thể bấm để kiểm tra
+			var buttonCheck = document.getElementsByClassName('button_place')[0];
+			if(buttonCheck.classList.toString().indexOf('disabled') === -1) {
+				buttonCheck.classList.add('finished');
+				buttonCheck.addEventListener('click', checkResult);
+				document.getElementsByClassName('button')[0].classList.remove('disabled');
+			}
+		``}
 		return false;
 	}
 
-	function handleDrop(event) {
-	  // this / e.target is current target element.
+	function checkResult(event) {
+		if(document.getElementsByClassName('scene')[0].classList.toString().indexOf('disabled') > -1) return false;
+		var placeholder = document.getElementsByClassName('placeholder');
+		var doneLesson = true;
+		for(let i = placeholder.length - 1; i >= 0; i--) {
+			if(placeholder[i].classList.toString().indexOf('done') > - 1) {
+				var elementNumberAdd = Number(placeholder[i].childNodes[2].childNodes[1].innerText);
+				var elementNumberSpace = 10 - numbersLesson.right[part-1][i];
+				if(elementNumberAdd === elementNumberSpace){
+					console.log('pass');
+				}
+				else {
+					doneLesson = false;
+					var elementAdd = placeholder[i].childNodes[2];
+					var indexElement = searchNumber(elementAdd.classList.toString());
+					elementAdd.parentNode.classList.remove('done');
+					document.getElementsByClassName('cont')[0].appendChild(elementAdd);
+					elementAdd.style.left =  (147 + 65 * indexElement).toFixed(1) + 'px';
+					elementAdd.style.top = (323 - (20 + 24 * (numbersLesson.left[0][indexElement] - 1))) + 'px';
+				}
+			}
+		}
+		if(doneLesson) {
+			document.getElementsByClassName('scene')[0].classList.add('disabled');
+			event.target.classList.add('disabled');
+			var scene = document.getElementsByClassName('scene')[0];
+			var i = 0;
+			
+			var id = setInterval(function() {
+					++i;
+					scene.style.left = (i * 15) + 'px';
+					if(i === 50) clearInterval(id);
+				} , 100)
 
-	  if (event.stopPropagation) {
-	    event.stopPropagation(); // stops the browser from redirecting.
-	  }
-	  var data = event.dataTransfer.getData('text/html');
-	  //console.log(data);
-	  event.target.appendChild(document.getElementsByClassName(data)[0]);
-	  
-	  return false;
+		}
 	}
 
-	function handleDragEnter(event) {
-		this.classList.add('highlighted');
-		// this.style.opacity = '1';
-		// var element = this;
-		// var count = 0;
-		// var id = setInterval(function () {
-		// 	count++;
-		// 	if(count === 10 || element.style.opacity === 0) clearInterval(id);
-		// 	element.style.opacity -= 0.1;
-		// }, 100)
-		// setTimeout(function() {
-		// 	element.classList.remove('highlighted');
-		// }, 1100)
-	}
-
-	function handleDragLeave(event) {
-		
-		this.classList.remove('highlighted');
-		console.log('Leave element');
-	}
 	function gameLaucher() {
+
 		var placeHolder = document.getElementsByClassName('placeholder');
 		[].forEach.call(placeHolder, function(holder) {
 			holder.addEventListener('dragenter', handleDragEnter, false)
@@ -218,6 +231,9 @@
 			brick.addEventListener('dragend', handleDragEnd, false);
 		});
 	}
+
+	createBricks(numbersLesson.right[0]);
+	createToLoadBricks(numbersLesson.left[0]);
 	gameLaucher();
 
 </script>

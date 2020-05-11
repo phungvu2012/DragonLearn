@@ -92,7 +92,6 @@ body .uchiru-locale-dropdown__toggle__caret {
 }
 
 body .uchiru-locale-dropdown__menu {
-	display: none;
 	list-style-type: none;
 	padding: 5px 0;
 	margin: 2px 0 0;

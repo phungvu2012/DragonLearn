@@ -156,7 +156,6 @@ div .smoke_gen {
     z-index: 2;
     width: 60px;
     height: 238px;
-    top: 19px;
 }
 
 .highlight {
@@ -267,8 +266,7 @@ div .smoke_gen {
 
 .placeholder .highlight{
 	background:rgba(246,255,158,.25);
-	width:60px;
-	position:absolute;
+	width:60px;position:absolute;
 	z-index:1;
 	top:0;
 	left:0;
@@ -286,5 +284,6 @@ div .smoke_gen {
 	background:url('../../Image/Load the trucks/17.png') -40px -309px no-repeat
 }
 .card .placeholder.highlighted .highlight{
-		display:block
+	display:block;
 }
+
