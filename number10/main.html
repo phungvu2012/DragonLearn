@@ -2,10 +2,11 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <script src="script.js"></script>
+    <meta charset="utf-8">
 </head>
 
-<body onload="append2Row()">
+<body onload="appendFirstLine()">
     <div class="uchiru_box">
         <div class="uchiru_head">
             <a class="back-link">
@@ -16,7 +17,7 @@
 
         <div class="card_content">
             <div id="board">
-                <div class="first_line">
+                <div class="first_line under_start">
                     <div class="cubes_wrapper">
                         <div class="cube_blue" style="left: 10px;"></div>
                         <div class="brace_top" style="top: -14px; left: 8px; width: 472px;">
@@ -26,7 +27,7 @@
                         </div>
                     </div>
                     <div class="example">
-                        <div class="inline_input">
+                        <div class="inline_input blank">
                             <div class="__outer">
                                 <div class="__inner">
                                     <span>1</span>
@@ -36,7 +37,7 @@
                         </div>
                         <span>+</span>
                         <!-- <span style="font-family: PT Sans;font-size: 42px;line-height: 90px;text-align: center;user-select: none;">+</span> -->
-                        <div class="inline_input">
+                        <div class="inline_input blank">
                             <div class="__outer">
                                 <div class="__inner">
                                     <span>0</span>
@@ -44,7 +45,7 @@
                             </div>
                         </div>
                         <span>=</span>
-                        <div class="inline_input">
+                        <div class="inline_input blank">
                             <div class="__outer">
                                 <div class="__inner">
                                     <span>1</span>
@@ -57,8 +58,20 @@
                 </div>
                 <div class="line" style="opacity: 1;">
                     <div class="cubes_wrapper">
-                        <div class="spot_empty" style="left: 422px;"></div>
+                        <!-- <div class="spot_empty" style="left: 422px;"></div> -->
                     </div>
+                    <div class="example">
+                        <div class="inline_input disabled">
+                            <div class="__outer">
+                                <div class="__inner">
+                                    <span>&nbsp;</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
                 <div class="line"></div>
                 <div class="line"></div>
@@ -68,6 +81,12 @@
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
+                <div class="line"></div>
+                <div class="btn_play" onclick="onBtn_playClicked()">
+                    <div class="triangle ">
+                        <span>start</span>
+                    </div>
+                </div>
 
 
             </div>
@@ -75,5 +94,6 @@
     </div>
 
 </body>
+
 
 </html>
