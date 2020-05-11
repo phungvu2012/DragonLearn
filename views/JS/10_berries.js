@@ -3,18 +3,18 @@
 
 // Các function
 function outBox(objtail, objhead) {
-	objhead.style.left = 675;
-	objtail.style.width = 170;
-	objhead.style.width = 215;
+	objhead.style.left = "675px";
+	objtail.style.width = "170px";
+	objhead.style.width = "215px";
 	for (let i=1; i<460; i++) {
     	setTimeout( function timer(){
-			objtail.style.left = parseInt(objtail.style.left) + 1;
+			objtail.style.left = parseInt(objtail.style.left) + 1 + "px";
 			if(parseInt(objtail.style.left) >= 791 && parseInt(objtail.style.width) >= 0)
-				objtail.style.width = parseInt(objtail.style.width) - 1;
-        				
-			objhead.style.left = parseInt(objhead.style.left) + 1;
-			if(parseInt(objhead.style.left) >= 746 && parseInt(objhead.style.width) >= 0) 
-				objhead.style.width = parseInt(objhead.style.width) - 1;
+				objtail.style.width = parseInt(objtail.style.width) - 1 + "px";
+
+			objhead.style.left = parseInt(objhead.style.left) + 1 + "px";
+			if(parseInt(objhead.style.left) >= 746 && parseInt(objhead.style.width) >= 0)
+				objhead.style.width = parseInt(objhead.style.width) - 1 + "px";
     	}, i*5 );
 	}
 }
@@ -29,11 +29,11 @@ $(document).ready(function() {
 	var objhead1 = document.getElementById("head1");
 	var objhead2 = document.getElementById("head2");
 	var objhead3 = document.getElementById("head3");
-	
+
 	var currentNumberOnTail = [5, 8, 4];
 	var currentNumberOnHead = [2, 6, 5];
-	
-	
+
+
 	$('.tail').draggable({
 	containment: "parent", revert: true,
     drag: function() {
@@ -45,18 +45,18 @@ $(document).ready(function() {
 		if(yPos >= yPosBox && yPos <= yPosBox + 130 && xPos >= xPosBox + 490) {
 			$(this).draggable("option", "revert", false);
 		}
-		else 
+		else
 		if(yPos >= yPosBox + 180 && yPos <= yPosBox + 310 && xPos >= xPosBox + 490) {
 			$(this).draggable("option", "revert", false);
 		}
-		else 
+		else
 		if(yPos >= yPosBox + 360 && yPos <= yPosBox + 490 && xPos >= xPosBox + 490) {
 			$(this).draggable("option", "revert", false);
 		}
 		else $(this).draggable("option", "revert", true);
     }
 	});
-	
+
 	$('#tail1').draggable({
 	stop: function() {
         var offset = $(this).offset();
@@ -65,8 +65,8 @@ $(document).ready(function() {
         //$('#posX').text('x: ' + xPos);
         //$('#posY').text('y: ' + yPos);
 		if(yPos >= yPosBox && yPos <= yPosBox + 130 && xPos >= xPosBox + 490) {
-			objtail1.style.left = 505;
-			objtail1.style.top = 17;
+			objtail1.style.left = "505px";
+			objtail1.style.top = "17px";
 			if(currentNumberOnTail[0] + currentNumberOnHead[0] != 10) {
 				$('#tail1').delay(500).animate(
 					{
@@ -77,10 +77,10 @@ $(document).ready(function() {
 			}
 			else outBox(objtail1, objhead1);
 		}
-		else 
+		else
 		if(yPos >= yPosBox + 180 && yPos <= yPosBox + 310 && xPos >= xPosBox + 490) {
-			objtail1.style.left = 505;
-			objtail1.style.top = 197;
+			objtail1.style.left = "505px";
+			objtail1.style.top = "197px";
 			if(currentNumberOnTail[0] + currentNumberOnHead[1] != 10) {
 				$('#tail1').delay(500).animate(
 					{
@@ -91,10 +91,10 @@ $(document).ready(function() {
 			}
 			else outBox(objtail1, objhead2);
 		}
-		else 
+		else
 		if(yPos >= yPosBox + 360 && yPos <= yPosBox + 490 && xPos >= xPosBox + 490) {
-			objtail1.style.left = 505;
-			objtail1.style.top = 374;
+			objtail1.style.left = "505px";
+			objtail1.style.top = "374px";
 			if(currentNumberOnTail[0] + currentNumberOnHead[2] != 10) {
 				$('#tail1').delay(500).animate(
 					{
@@ -107,7 +107,7 @@ $(document).ready(function() {
 		}
     }
 	});
-	
+
 	$('#tail2').draggable({
 	stop: function() {
         var offset = $(this).offset();
@@ -116,8 +116,8 @@ $(document).ready(function() {
         //$('#posX').text('x: ' + xPos);
         //$('#posY').text('y: ' + yPos);
 		if(yPos >= yPosBox && yPos <= yPosBox + 130 && xPos >= xPosBox + 490) {
-			objtail2.style.left = 505;
-			objtail2.style.top = 17;
+			objtail2.style.left = "505px";
+			objtail2.style.top = "17px";
 			if(currentNumberOnTail[1] + currentNumberOnHead[0] != 10) {
 				$('#tail2').delay(500).animate(
 					{
@@ -128,10 +128,10 @@ $(document).ready(function() {
 			}
 			else outBox(objtail2, objhead1);
 		}
-		else 
+		else
 		if(yPos >= yPosBox + 180 && yPos <= yPosBox + 310 && xPos >= xPosBox + 490) {
-			objtail2.style.left = 505;
-			objtail2.style.top = 197;
+			objtail2.style.left = "505px";
+			objtail2.style.top = "197px";
 			if(currentNumberOnTail[1] + currentNumberOnHead[1] != 10) {
 				$('#tail2').delay(500).animate(
 					{
@@ -142,10 +142,10 @@ $(document).ready(function() {
 			}
 			else outBox(objtail2, objhead2);
 		}
-		else 
+		else
 		if(yPos >= yPosBox + 360 && yPos <= yPosBox + 490 && xPos >= xPosBox + 490) {
-			objtail2.style.left = 505;
-			objtail2.style.top = 374;
+			objtail2.style.left = "505px";
+			objtail2.style.top = "374px";
 			if(currentNumberOnTail[1] + currentNumberOnHead[2] != 10) {
 				$('#tail2').delay(500).animate(
 					{
@@ -158,7 +158,7 @@ $(document).ready(function() {
 		}
     }
 	});
-	
+
 	$('#tail3').draggable({
 	stop: function() {
         var offset = $(this).offset();
@@ -167,8 +167,8 @@ $(document).ready(function() {
         //$('#posX').text('x: ' + xPos);
         //$('#posY').text('y: ' + yPos);
 		if(yPos >= yPosBox && yPos <= yPosBox + 130 && xPos >= xPosBox + 490) {
-			objtail3.style.left = 505;
-			objtail3.style.top = 17;
+			objtail3.style.left = "505px";
+			objtail3.style.top = "17px";
 			if(currentNumberOnTail[2] + currentNumberOnHead[0] != 10) {
 				$('#tail3').delay(500).animate(
 					{
@@ -179,10 +179,10 @@ $(document).ready(function() {
 			}
 			else outBox(objtail3, objhead1);
 		}
-		else 
+		else
 		if(yPos >= yPosBox + 180 && yPos <= yPosBox + 310 && xPos >= xPosBox + 490) {
-			objtail3.style.left = 505;
-			objtail3.style.top = 197;
+			objtail3.style.left = "505px";
+			objtail3.style.top = "197px";
 			if(currentNumberOnTail[2] + currentNumberOnHead[1] != 10) {
 				$('#tail3').delay(500).animate(
 					{
@@ -193,10 +193,10 @@ $(document).ready(function() {
 			}
 			else outBox(objtail3, objhead2);
 		}
-		else 
+		else
 		if(yPos >= yPosBox + 360 && yPos <= yPosBox + 490 && xPos >= xPosBox + 490) {
-			objtail3.style.left = 505;
-			objtail3.style.top = 374;
+			objtail3.style.left = "505px";
+			objtail3.style.top = "374px";
 			if(currentNumberOnTail[2] + currentNumberOnHead[2] != 10) {
 				$('#tail3').delay(500).animate(
 					{
@@ -210,4 +210,3 @@ $(document).ready(function() {
     }
 	});
 });
-
