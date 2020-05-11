@@ -68,6 +68,8 @@ $(document).ready(function() {
 	var objKhung = document.getElementById("khung");
 	var objtail = document.getElementsByClassName("tail");
 	var objhead = document.getElementsByClassName("head");
+	var objvienxanhduoi = document.getElementById("vien_xanh_duoi");
+	var objvienxanhdau = document.getElementById("vien_xanh_dau");
 	// Các biến thành phần của màn chơi
 	var stage = 1;
 	var currentNumberOnTail = [5, 8, 4];
@@ -89,16 +91,42 @@ $(document).ready(function() {
         //$('#posY').text('y: ' + yPos);
 		if(yPos >= yPosKhung && yPos <= yPosKhung + 82 && xPos >= xPosKhung + 490) {
 			$(this).draggable("option", "revert", false);
+			objvienxanhduoi.style.opacity = 1;
+			objvienxanhduoi.style.left = xPos - xPosKhung - 13 + "px";
+			objvienxanhduoi.style.top = yPos - yPosKhung + 45 + "px";
+			objvienxanhdau.style.opacity = 1;
+			objvienxanhdau.style.left = "675px";
+			objvienxanhdau.style.top = "65px";
 		}
 		else
 		if(yPos >= yPosKhung + 132 && yPos <= yPosKhung + 262 && xPos >= xPosKhung + 490) {
 			$(this).draggable("option", "revert", false);
+			objvienxanhduoi.style.opacity = 1;
+			objvienxanhduoi.style.left = xPos - xPosKhung - 13 + "px";
+			objvienxanhduoi.style.top = yPos - yPosKhung + 45 + "px";
+			objvienxanhdau.style.opacity = 1;
+			objvienxanhdau.style.left = "675px";
+			objvienxanhdau.style.top = "245px";
 		}
 		else
 		if(yPos >= yPosKhung + 312 && yPos <= yPosKhung + 442 && xPos >= xPosKhung + 490) {
 			$(this).draggable("option", "revert", false);
+			objvienxanhduoi.style.opacity = 1;
+			objvienxanhduoi.style.left = xPos - xPosKhung - 13 + "px";
+			objvienxanhduoi.style.top = yPos - yPosKhung + 45 + "px";
+			objvienxanhdau.style.opacity = 1;
+			objvienxanhdau.style.left = "675px";
+			objvienxanhdau.style.top = "422px";
 		}
-		else $(this).draggable("option", "revert", true);
+		else {
+			$(this).draggable("option", "revert", true);
+			objvienxanhduoi.style.opacity = 0;
+			objvienxanhduoi.style.left = "-9999px";
+			objvienxanhduoi.style.top = "-9999px";
+			objvienxanhdau.style.opacity = 0;
+			objvienxanhdau.style.left = "-9999px";
+			objvienxanhdau.style.top = "-9999px";
+		}
     }
 	});
 

@@ -69,3 +69,25 @@
 	top: 422px;
 	z-index: 0;
 }
+
+#vien_xanh_duoi{
+	width: 186px;
+	height: 179px;
+	background-image: url("../../Image/Load trucks with 10 berries/vien_xanh_duoi.png");
+	position: absolute;
+	opacity: 0;
+	left: -9999px;
+	top: -9999px;
+	z-index: 1;
+}
+
+#vien_xanh_dau{
+	width: 224px;
+	height: 179px;
+	background-image: url("../../Image/Load trucks with 10 berries/vien_xanh_dau.png");
+	position: absolute;
+	opacity: 0;
+	left: -9999px;
+	top: -9999px;
+	z-index: 1;
+}
