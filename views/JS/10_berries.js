@@ -21,9 +21,6 @@ function outBox(objtail, objhead) {
 // Main code
 $(document).ready(function() {
 	var objKhung = document.getElementById("khung");
-	var offsetK = $(objKhung).offset();
-	var xPosKhung = offsetK.left;
-	var yPosKhung = offsetK.top;
 	var objtail1 = document.getElementById("tail1");
 	var objtail2 = document.getElementById("tail2");
 	var objtail3 = document.getElementById("tail3");
@@ -41,6 +38,9 @@ $(document).ready(function() {
         var offset = $(this).offset();
         var xPos = offset.left;
         var yPos = offset.top;
+				var offsetK = $(objKhung).offset();
+				var xPosKhung = offsetK.left;
+				var yPosKhung = offsetK.top;
         //$('#posX').text('x: ' + xPos);
         //$('#posY').text('y: ' + yPos);
 		if(yPos >= yPosKhung && yPos <= yPosKhung + 82 && xPos >= xPosKhung + 490) {
@@ -63,6 +63,9 @@ $(document).ready(function() {
         var offset = $(this).offset();
         var xPos = offset.left;
         var yPos = offset.top;
+				var offsetK = $(objKhung).offset();
+				var xPosKhung = offsetK.left;
+				var yPosKhung = offsetK.top;
         //$('#posX').text('x: ' + xPos);
         //$('#posY').text('y: ' + yPos);
 		if(yPos >= yPosKhung && yPos <= yPosKhung + 82 && xPos >= xPosKhung + 490) {
@@ -114,6 +117,9 @@ $(document).ready(function() {
         var offset = $(this).offset();
         var xPos = offset.left;
         var yPos = offset.top;
+				var offsetK = $(objKhung).offset();
+				var xPosKhung = offsetK.left;
+				var yPosKhung = offsetK.top;
         //$('#posX').text('x: ' + xPos);
         //$('#posY').text('y: ' + yPos);
 		if(yPos >= yPosKhung && yPos <= yPosKhung + 82 && xPos >= xPosKhung + 490) {
@@ -165,6 +171,9 @@ $(document).ready(function() {
         var offset = $(this).offset();
         var xPos = offset.left;
         var yPos = offset.top;
+				var offsetK = $(objKhung).offset();
+				var xPosKhung = offsetK.left;
+				var yPosKhung = offsetK.top;
         //$('#posX').text('x: ' + xPos);
         //$('#posY').text('y: ' + yPos);
 		if(yPos >= yPosKhung && yPos <= yPosKhung + 82 && xPos >= xPosKhung + 490) {
