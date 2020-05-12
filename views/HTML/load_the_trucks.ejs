@@ -64,11 +64,12 @@
 					    	Load the trucks to the top
 						</span>
 					</div>
-					<div class="scene under_start" >
+					<div class="scene" >
+														<!--
 						<div class="truck" style="">
 							<div class="smoke_gen"></div>
 							<div class="brick_holder">
-								<!--
+
 								<div class="loaded_brick" style="height: 141.2px;">
 									<div class="cap"></div>
 									<span>6</span>
@@ -89,38 +90,23 @@
 									<div class="cap"></div>
 									<span>10</span>
 								</div>
-							-->
+
 							</div>
 							<div class="wheel wheel_0"></div>
 							<div class="wheel wheel_1"></div>
 							<div class="wheel wheel_2"></div>
 						</div>
-						<div class="placeholder element0" style="left: 429px; height: 238px; top: 19px;">
-							<div class="highlight element0" style="height: 92.8px;" ><i class="element0"></i></div></div>
-								
-							
-						<div class="placeholder element1" style=" left: 494px; height: 238px; top: 19px;">
-							<div class="highlight element1" style="height: 68.6px;"><i class="element1"></i></div></div>
-							
-							
-						
-						<div class="placeholder element2" style="left: 559px; height: 238px; top: 19px;">
-							<div class="highlight element2" style="height: 44.4px;"><i class="element2"></i></div></div>
-								
-							
-						
-						<div class="placeholder element3" style="left: 624px; height: 238px; top: 19px;">
-							<div class="highlight element3" style="height: 20.2px;"><i class="element3"></i></div></div>
-								
-							
-						
+													-->
+<!-- 						
+<div class="placeholder element0" style="left: 429px; height: 238px; top: 19px;"></div>
+<div class="placeholder element1" style=" left: 494px; height: 238px; top: 19px;"></div>
+<div class="placeholder element2" style="left: 559px; height: 238px; top: 19px;"></div>
+<div class="placeholder element3" style="left: 624px; height: 238px; top: 19px;"></div> 
+
 					</div>
+					-->
 					<!--finished -->
-					<div class="button_place under_start" >
-						<div class="button gradient disabled">
-							<span>Ready to go!</span>
-						</div>
-					</div>
+
 					<!-- finished, openhand -->
 					<!--
 					<div class="to_load_brick under_start" style="height: 44px; left: 147px; top: 279.6px; touch-action: none;"><div class="cap"></div><span>2</span></div>
@@ -128,7 +114,7 @@
 					<div class="to_load_brick under_start" style="height: 92px; left: 277px; top: 231.2px; touch-action: none;"><div class="cap"></div><span>4</span></div>
 					<div class="to_load_brick under_start" style="height: 68px; left: 342px; top: 255.4px; touch-action: none;"><div class="cap"></div><span>3</span></div>
 					-->
-					<div class="btn_play"  onclick="startLesson()">
+					<div class="btn_play">
 						<div class="triangle">
 							<span>Start</span>
 						</div>
@@ -146,44 +132,7 @@
 <script type="text/javascript" src="server/views/JS/event_loadTheTrucks.js"></script>
 
 <script type="text/javascript">
-	var part = 1;
 
-	function checkResult(event) {
-		if(document.getElementsByClassName('scene')[0].classList.toString().indexOf('disabled') > -1) return false;
-		var placeholder = document.getElementsByClassName('placeholder');
-		var doneLesson = true;
-		for(let i = placeholder.length - 1; i >= 0; i--) {
-			if(placeholder[i].classList.toString().indexOf('done') > - 1) {
-				var elementNumberAdd = Number(placeholder[i].childNodes[2].childNodes[1].innerText);
-				var elementNumberSpace = 10 - numbersLesson.right[part-1][i];
-				if(elementNumberAdd === elementNumberSpace){
-					console.log('pass');
-				}
-				else {
-					doneLesson = false;
-					var elementAdd = placeholder[i].childNodes[2];
-					var indexElement = searchNumber(elementAdd.classList.toString());
-					elementAdd.parentNode.classList.remove('done');
-					document.getElementsByClassName('cont')[0].appendChild(elementAdd);
-					elementAdd.style.left =  (147 + 65 * indexElement).toFixed(1) + 'px';
-					elementAdd.style.top = (323 - (20 + 24 * (numbersLesson.left[0][indexElement] - 1))) + 'px';
-				}
-			}
-		}
-		if(doneLesson) {
-			document.getElementsByClassName('scene')[0].classList.add('disabled');
-			event.target.classList.add('disabled');
-			var scene = document.getElementsByClassName('scene')[0];
-			var i = 0;
-			
-			var id = setInterval(function() {
-					++i;
-					scene.style.left = (i * 15) + 'px';
-					if(i === 50) clearInterval(id);
-				} , 100)
-
-		}
-	}
 
 	function gameLaucher() {
 
@@ -200,12 +149,12 @@
 			brick.addEventListener('dragstart', handleDragStart, false);
 			brick.addEventListener('dragend', handleDragEnd, false);
 		});
+		document.getElementsByClassName('btn_play')[0].addEventListener('click',startLesson);
 	}
 
-	createBricks(numbersLesson.right[0]);
-	createToLoadBricks(numbersLesson.left[0]);
+	createLesson(numbersLesson);
 	gameLaucher();
-
+	setTimeout(removeLesson, 4000);
 </script>
 </body>
 </html>

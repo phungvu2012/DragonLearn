@@ -1,14 +1,18 @@
+var partLesson = 2; //Bài học hiện tại
+
 // Khởi động bài học khi nhấn start
 function startLesson() {
 	var buttonPlay = document.getElementsByClassName('btn_play');
 	setTimeout(function() {
 	buttonPlay[0].style.display = 'none';
 	} , 1000)
+
 	buttonPlay[0].style.opacity = '0';
 	buttonPlay[0].style.width = '300px';
  	buttonPlay[0].style.height = '300px';
  	buttonPlay[0].style.margin = '-190px 0 0 -190px';
 
+	document.getElementsByClassName('truck')[0].classList.remove('under_start');
   	var triangle = document.getElementsByClassName('triangle');
 	triangle[0].style.background = '200%';
 	document.getElementsByClassName('scene')[0].style.opacity = '1';
@@ -21,60 +25,6 @@ function startLesson() {
 		bricks[i].style.opacity = '1';
 	}
 }
-
-
-
-/* Đã xong */
-//Khởi tạo các phần tử
-var data = 
-	{ 
-		left: 
-		[
-			[2, 1, 4, 3]
-		],
- 		right: 
- 		[
- 			[6, 7, 8, 9, 10] 
- 		]
- 	};
-
-// Tạo hàng trên xe
-function createBricks(numbers) {
-	var brickHolder = document.getElementsByClassName('brick_holder')[0];
-	for (let i = 0, length = numbers.length; i < length; i++) {
-		var newLoadedBrick = document.createElement('div');
-		newLoadedBrick.setAttribute('class','loaded_brick');
-		newLoadedBrick.setAttribute('style','height:' + (23.6 * numbers[i]).toFixed(1) + 'px');
-
-		var newCap = document.createElement('div');
-		newCap.setAttribute('class','cap');
-		var newSpan = document.createElement('span');
-		var text = document.createTextNode(numbers[i]);
-		newSpan.appendChild(text);
-		newLoadedBrick.appendChild(newCap);
-		newLoadedBrick.appendChild(newSpan);
-		brickHolder.appendChild(newLoadedBrick);
-	}
-}
-// Tạo hàng xếp vào
-function createToLoadBricks(numbers) {
-	var cont = document.getElementsByClassName('cont')[0];
-	for (let i = 0, length = numbers.length; i < length; i++) {
-		var newToLoadedBrick = document.createElement('div');
-		newToLoadedBrick.setAttribute('class','to_load_brick under_start');
-		newToLoadedBrick.classList.add('element' + i);
-		newToLoadedBrick.setAttribute('style','height:' +  (20 + 24 * (numbers[i] - 1)).toFixed(1) + 'px; left: ' + (147 + 65 * i).toFixed(1) + 'px; top: ' + (323 - (20 + 24 * (numbers[i] - 1))) + 'px; touch-action: none;');
-		newToLoadedBrick.setAttribute('draggable','true');
-		var newCap = document.createElement('div');
-		newCap.setAttribute('class','cap');
-		var newSpan = document.createElement('span');
-		var text = document.createTextNode(numbers[i]);
-		newSpan.appendChild(text);
-		newToLoadedBrick.appendChild(newCap);
-		newToLoadedBrick.appendChild(newSpan);
-		cont.appendChild(newToLoadedBrick);
-	}
-}	
 
 /* Tiện ích */	
 // Chọn ngôn ngữ
@@ -94,4 +44,47 @@ function searchNumber(str) {
 	var index = str.toString().search('element');
 	if(index === -1) return -1;
 	return str[index+7];
+}
+
+
+
+function checkResult(event) {
+	if(document.getElementsByClassName('scene')[0].classList.toString().indexOf('disabled') > -1) return false;
+	var placeholder = document.getElementsByClassName('placeholder');
+	var doneLesson = true;
+	for(let i = placeholder.length - 1; i >= 0; i--) {
+		if(placeholder[i].classList.toString().indexOf('done') > - 1) {
+			var elementNumberAdd = Number(placeholder[i].childNodes[1].childNodes[1].innerText);
+			var elementNumberSpace = 10 - numbersLesson.right[partLesson - 1][i];
+			// console.log()
+			if(elementNumberAdd === elementNumberSpace){
+				console.log('pass');
+			}
+			else {
+				doneLesson = false;
+				var elementAdd = placeholder[i].childNodes[1];
+				var indexElement = searchNumber(elementAdd.classList.toString());
+				elementAdd.parentNode.classList.remove('done');
+				document.getElementsByClassName('cont')[0].appendChild(elementAdd);
+				elementAdd.style.left =  (342 - 65 * indexElement).toFixed(1) + 'px';
+				elementAdd.style.top = (323 - (20 + 24 * (numbersLesson.left[partLesson - 1][indexElement] - 1))) + 'px';
+			}
+		}
+		else doneLesson = false;
+	}
+	if(doneLesson) {
+		document.getElementsByClassName('scene')[0].classList.add('disabled');
+		event.target.classList.add('disabled');
+		var scene = document.getElementsByClassName('scene')[0];
+		var i = 0;
+		
+		var id = setInterval(function() {
+				++i;
+				scene.style.left = (i * 15) + 'px';
+				if(i === 50) clearInterval(id);
+			} , 100)
+	}
+	else {
+		
+	}
 }
