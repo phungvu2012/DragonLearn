@@ -1,34 +1,14 @@
-// function logKey(e) {
-//     console.log(e.code);
-// }
-// document.addEventListener("DOMContentLoaded", function() {
-//     var board = document.getElementById("board");
-//     console.log(board);
-//     board.addEventListener('keypress', function(e) {
-//         console.log(e);
-//     });
-//     // this function runs when the DOM is ready, i.e. when the document has been parsed
-//     // document.getElementById("user-greeting").textContent = "Welcome back, Bart";
-// });
-
-// var board = document.getElementById("board");
-// console.log(board);
-// board.addEventListener('keypress', function(e) {
-//     console.log(e);
-// });
-
 document.onkeypress = function(event) {
     const isNumber = /^[0-9]$/i.test(event.key);
     console.log(event);
     console.log("is number --> " + isNumber);
-    if(isNumber)
-    {
-        
+    if (isNumber) {
+
     }
-    // input_Box();
 }
 
-function genInline_input_disable() {
+//#region generate input
+function generate_inline_input_disable() {
     var inline_input = document.createElement("div");
     inline_input.classList.add("inline_input");
     inline_input.classList.add("disabled");
@@ -44,7 +24,7 @@ function genInline_input_disable() {
     return inline_input;
 }
 
-function genResult_Inline_input_blank() {
+function generate_result_inline_input_blank() {
     var inline_input = document.createElement("div");
     inline_input.classList.add("inline_input");
     inline_input.classList.add("blank");
@@ -62,29 +42,34 @@ function genResult_Inline_input_blank() {
     inline_input.appendChild(__outer);
     return inline_input;
 }
-function genleftExample()
-{
+//#endregion generate input
+
+
+//#region generate example
+
+function append_example_class() {
     var lines = document.getElementsByClassName("line");
-    for(var i = 0; i < lines.length; i++)
-    {
-        gen_all_example_children(lines[i]);
+    for (var i = 0; i < lines.length; i++) {
+        var example = document.createElement("div");
+        example.setAttribute('class', 'example');
+        lines[i].appendChild(example);
     }
 }
 
-function gen_all_example_children(lineElement) {
 
-    var inline_input_disable = genInline_input_disable();
+
+function generate_all_example_children(lineElement) {
+
+    var inline_input_disable = generate_inline_input_disable();
     var addOperator = document.createElement("span");
     addOperator.textContent = '+';
-    var inline_input_disable2 = genInline_input_disable();
+    var inline_input_disable2 = generate_inline_input_disable();
     var equalOperator = document.createElement("span");
     equalOperator.textContent = '=';
-    var finalValue = genResult_Inline_input_blank();
+    var finalValue = generate_result_inline_input_blank();
 
-    // var example = document.getElementsByClassName("example")[line];
     var example = lineElement.getElementsByClassName('example')[0];
-    if(!example)
-    {
+    if (!example) {
         console.log("does not found example at class line" + line);
         return;
     }
@@ -93,11 +78,12 @@ function gen_all_example_children(lineElement) {
     example.appendChild(inline_input_disable2);
     example.appendChild(equalOperator);
     example.appendChild(finalValue);
-
-
 }
+//#endregion generate example
 
-function appendBlueCube(leftPos, index, time) {
+
+//#region append cubes
+function append_blue_cube(leftPos, index, time) {
     // var leftPos = 10;
     var cubeWraperElement = document.getElementsByClassName("cubes_wrapper")[index];
     if (!cubeWraperElement) {
@@ -110,7 +96,7 @@ function appendBlueCube(leftPos, index, time) {
     }
 }
 
-function appendRedCube(leftPos, index, time) {
+function append_red_cube(leftPos, index, time) {
     // var leftPos = 10;
     var cubeWraperElement = document.getElementsByClassName("cubes_wrapper")[index];
     if (!cubeWraperElement) {
@@ -123,7 +109,7 @@ function appendRedCube(leftPos, index, time) {
     }
 }
 
-function appendBluenRedCube(startPos, index, blueCubeNum, redCubeNum) {
+function append_blue_and_red_cube(startPos, index, blueCubeNum, redCubeNum) {
     var cubeWraperElement = document.getElementsByClassName("cubes_wrapper")[index];
     if (!cubeWraperElement) {
         console.log("does not found cubeWraperElement");
@@ -140,30 +126,7 @@ function appendBluenRedCube(startPos, index, blueCubeNum, redCubeNum) {
     }
 }
 
-function appendFirstLine() {
-    var leftPos = 10;
-    appendBlueCube(10, 0, 10);
-    // appendCubeWrapperClass();
-    // appendExampleClass();
-    // appendBlueCube(10, 1, 9);
-}
-
-function startGame() {
-    appendCubeWrapperClass();
-    appendExampleClass();
-    appendLeftLine();
-    genleftExample();
-}
-
-function appendLeftLine() {
-    var totalLines = 9;
-    // var totalCubes = 10;
-    for (var i = 1; i <= totalLines; i++) {
-        appendBluenRedCube(10, i, totalLines - i+1, i);
-    }
-}
-
-function appendCubeWrapperClass() {
+function append_cube_wrapper_class() {
     var lines = document.getElementsByClassName("line");
     for (var i = 0; i < lines.length; i++) {
         var cubeWrapperElement = document.createElement("div");
@@ -171,46 +134,52 @@ function appendCubeWrapperClass() {
         lines[i].appendChild(cubeWrapperElement);
     }
 }
+//#endregion append cube
 
-function appendExampleClass() {
-    var lines = document.getElementsByClassName("line");
-    for (var i = 0; i < lines.length; i++) {
-        var example = document.createElement("div");
-        example.setAttribute('class', 'example');
-        lines[i].appendChild(example);
+
+function append_first_line() {
+    var leftPos = 10;
+    append_blue_cube(10, 0, 10);
+    // appendCubeWrapperClass();
+    // appendBlueCube(10, 1, 9);
+}
+
+function start_game() {
+    append_cube_wrapper_class();
+    append_example_class();
+    generate_left_lines();
+    generate_left_example();
+}
+
+function generate_left_lines() {
+    var totalLines = 9;
+    // var totalCubes = 10;
+    for (var i = 1; i <= totalLines; i++) {
+        append_blue_and_red_cube(10, i, totalLines - i + 1, i);
     }
 }
 
-function buttonDown() {
-    return null != i && i.event("play_button"), a.off(Card.Script98.buttonDown()), e.addClass("started"), a.addClass("started"), $.delay(1e3, function() {
-        return a.remove(), e.removeClass("started").addClass("finished"), r()
-    });
+function generate_left_example() {
+    var lines = document.getElementsByClassName("line");
+    for (var i = 0; i < lines.length; i++) {
+        generate_all_example_children(lines[i]);
+    }
 }
 
-function disableBtn_Play() {
+function hide_btn_play() {
     var element = document.getElementsByClassName("btn_play")[0];
     // console.log(element);
     element.style.display = "none";
 }
 
-function removeUnder_Start() {
+function remove_blur_under_start() {
     var element = document.getElementsByClassName("first_line under_start")[0];
     // console.log(element);
     element.classList.remove("under_start");
 }
 
-function onBtn_playClicked() {
-    disableBtn_Play();
-    removeUnder_Start();
-    startGame();
-}
-
-function appendoneEx() {
-    var element = document.getElementsByClassName("example")[1];
-    var outer = document.createElement("div");
-    outer.setAttribute('class', '__outer');
-    var inner = document.createElement("div");
-    inner.setAttribute('class', '__inner');
-    outer.appendChild(inner);
-    element.appendChild(outer);
+function on_btn_play_clicked() {
+    hide_btn_play();
+    remove_blur_under_start();
+    start_game();
 }
