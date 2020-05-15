@@ -15,7 +15,58 @@ var numbersLesson =
  			[8, 0, 2, 4, 10]
  		]
  	};
+// Tạo nút xác nhận chơi
+function createButonPlay() {
+	var board = document.getElementById('board');
+	var buttonPlay = document.createElement('div');
+	buttonPlay.setAttribute('class', 'btn_play');
 
+	var triangle = document.createElement('div');
+	triangle.setAttribute('class', 'triangle');
+
+	var span = document.createElement('span'),
+		text = document.createTextNode('Start');
+
+	span.appendChild(text);
+	triangle.appendChild(span);
+	buttonPlay.appendChild(triangle);
+	board.appendChild(buttonPlay);
+}
+
+// Tạo khu vực ô tô để chơi 
+function createScene() {
+	var container = document.getElementsByClassName('cont')[0];
+
+	var scene = document.createElement('div');
+	scene.setAttribute('class', 'scene');
+	container.appendChild(scene);
+	
+	createTruck();	// Tạo ô tô chứa
+	createBricks(numbersLesson.right[partLesson - 1]);  // Tạo hàng trên xe
+
+	createPlaceHolder();	// Tạo vị trí để hàng
+}
+// Tạo nền ô tô, bánh xe, khói (chưa có gạch)
+function createTruck() {
+	var scene = document.getElementsByClassName('scene')[0];
+	var truck = document.createElement('div');
+	truck.setAttribute('class', 'truck under_start');
+	scene.appendChild(truck);
+
+	var smokeGen = document.createElement('div');	
+	smokeGen.setAttribute('class', 'smoke_gen');
+	truck.appendChild(smokeGen);
+
+	var brickHolder = document.createElement('div');
+	brickHolder.setAttribute('class', 'brick_holder');
+	truck.appendChild(brickHolder);
+
+	for (let i = 0; i < 3; i++) {
+		var wheel = document.createElement('div');
+		wheel.setAttribute('class', 'wheel wheel_' + i);
+		truck.appendChild(wheel);
+	}
+}
 // Tạo hàng trên xe
 function createBricks(numbers) {
 	var brickHolder = document.getElementsByClassName('brick_holder')[0];
@@ -34,28 +85,24 @@ function createBricks(numbers) {
 		brickHolder.appendChild(newLoadedBrick);
 	}
 }
-// Tạo hàng xếp vào
-function createToLoadBricks(numbers) {
-	var cont = document.getElementsByClassName('cont')[0];
-	for (let i = 0, length = numbers.length; i < length; i++ ) {
-		var newToLoadedBrick = document.createElement('div');
-		newToLoadedBrick.setAttribute('class','to_load_brick under_start');
-		newToLoadedBrick.classList.add('element' + i);
-		// Giá trị đầu tiên là 20 vì cách lề thêm 4px để dễ nhìn hơn;
-		console.log('create block');
-		newToLoadedBrick.setAttribute('style','height:' +  (20 + 24 * (numbers[i] - 1)).toFixed(1) + 'px; left: ' + (342 - 65 * i).toFixed(1) + 'px; top: ' + (323 - (20 + 24 * (numbers[i] - 1))) + 'px; touch-action: none;');
-		newToLoadedBrick.setAttribute('draggable','true');
-		var newCap = document.createElement('div');
-		newCap.setAttribute('class','cap');
-		var newSpan = document.createElement('span');
-		var text = document.createTextNode(numbers[i]);
-		newSpan.appendChild(text);
-		newToLoadedBrick.appendChild(newCap);
-		newToLoadedBrick.appendChild(newSpan);
-		cont.appendChild(newToLoadedBrick);
-	}
-}	
+// Tạo nút xác nhận
+function buttonPlace() {
+	var container = document.getElementsByClassName('cont')[0];
 
+	var buttonPlace = document.createElement('div');
+	buttonPlace.setAttribute('class', 'button_place under_start finished');
+	container.appendChild(buttonPlace);
+
+	var button = document.createElement('div');
+	button.setAttribute('class', 'button gradient disabled');
+	buttonPlace.appendChild(button);
+
+	var span = document.createElement('span'),
+		text = document.createTextNode('Ready to go!')
+	span.appendChild(text);
+
+	button.appendChild(span);
+}
 // Create placeholder element
 function createPlaceHolder() {
 	var scene = document.getElementsByClassName('scene')[0];
@@ -80,54 +127,53 @@ function createPlaceHolder() {
 		placeHolder[i].appendChild(newHighlight);
 	}
 }
-
-
-
-function createLesson(numbersLesson) {
-	var scene = document.getElementsByClassName('scene')[0];
-	var truck = document.createElement('div');
-	truck.setAttribute('class', 'truck under_start');
-	var smokeGen = document.createElement('div');
-	smokeGen.setAttribute('class', 'smoke_gen');
-	var brickHolder = document.createElement('div');
-	brickHolder.setAttribute('class', 'brick_holder');
-	scene.appendChild(truck);
-	truck.appendChild(smokeGen);
-	truck.appendChild(brickHolder);
-	for (let i = 0; i < 3; i++) {
-		var wheel = document.createElement('div');
-		wheel.setAttribute('class', 'wheel wheel_' + i);
-		truck.appendChild(wheel);
-	}
-
+// Tạo hàng xếp vào
+function createToLoadBricks(numbers) {
 	var cont = document.getElementsByClassName('cont')[0];
-	var buttonPlace = document.createElement('div');
-	buttonPlace.setAttribute('class', 'button_place under_start finished');
+	for (let i = 0, length = numbers.length; i < length; i++ ) {
+		var newToLoadedBrick = document.createElement('div');
+		newToLoadedBrick.setAttribute('class','to_load_brick under_start');
+		newToLoadedBrick.classList.add('element' + i);
+		// Giá trị đầu tiên là 20 vì cách lề thêm 4px để dễ nhìn hơn;
+		console.log('create block');
+		newToLoadedBrick.setAttribute('style','height:' +  (20 + 24 * (numbers[i] - 1)).toFixed(1) + 'px; left: ' + (342 - 65 * i).toFixed(1) + 'px; top: ' + (323 - (20 + 24 * (numbers[i] - 1))) + 'px; touch-action: none;');
+		newToLoadedBrick.setAttribute('draggable','true');
+		var newCap = document.createElement('div');
+		newCap.setAttribute('class','cap');
+		var newSpan = document.createElement('span');
+		var text = document.createTextNode(numbers[i]);
+		newSpan.appendChild(text);
+		newToLoadedBrick.appendChild(newCap);
+		newToLoadedBrick.appendChild(newSpan);
+		cont.appendChild(newToLoadedBrick);
+	}
+}	
 
-	var button = document.createElement('div');
-	button.setAttribute('class', 'button gradient disabled');
-	var span = document.createElement('span'),
-		text = document.createTextNode('Ready to go!')
-	span.appendChild(text);
-	button.appendChild(span);
-
-	buttonPlace.appendChild(button);
-	cont.appendChild(buttonPlace);
-	// Tạo phần tử con
-	createBricks(numbersLesson.right[partLesson - 1]);
-	createPlaceHolder();
-	createToLoadBricks(numbersLesson.left[partLesson - 1]);
+// Tạo bài học
+function createLesson(numbersLesson) {
+	createButonPlay();	// Tạo nút bắt đầu
+	createScene();	// Tạo khu vực ô tô chơi
+	createToLoadBricks(numbersLesson.left[partLesson - 1]); 	// Tạo hàng chuyển vào xe
+	buttonPlace();	// Tạo nút xác nhận
 }
 
 
-function removeLesson(){
-	var scene = document.getElementsByClassName('scene')[0];
-	var cont = document.getElementsByClassName('cont')[0];
-	var placeHolder = document.getElementsByClassName('placeholder');
-	var truck = document.getElementsByClassName('truck')[0];
-	for (var i = placeHolder.length - 1; i >= 0; i--) {
-	
-		scene.removeChild(placeHolder[i]);
+function nextLesson(){
+	var cont = document.getElementsByClassName('cont')[0],
+	 	scene = document.getElementsByClassName('scene')[0],
+		button_place = document.getElementsByClassName('button_place')[0],
+		board = document.getElementById('board'),
+		buttonPlay = document.getElementsByClassName('btn_play')[0];
+	cont.removeChild(scene);
+	cont.removeChild(button_place);
+	board.removeChild(buttonPlay);
+
+	var toLoadBricks = document.getElementsByClassName('to_load_brick');
+	for (var i = 0; i < toLoadBricks.length; i++) {
+		cont.removeChild(toLoadBricks[i]);
 	}
-	scene.removeChild(truck);
+	document.getElementById('bead' + (totalLesson - partLesson)).setAttribute('style', 'right: ' + (4 + (partLesson-1) * 20) + 'px');
+	partLesson++;
+	createLesson(numbersLesson);
+	gameLaucher();
 }
