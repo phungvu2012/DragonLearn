@@ -3,7 +3,10 @@ document.onkeypress = function(event) {
     console.log(event);
     console.log("is number --> " + isNumber);
     if (isNumber) {
-
+        var status = edit_last_inline_input_focus_element_and_check_answer(event.key);
+        if (status) {
+            find_next_input_disable_element_to_focus();
+        }
     }
 }
 
@@ -55,8 +58,6 @@ function append_example_class() {
         lines[i].appendChild(example);
     }
 }
-
-
 
 function generate_all_example_children(lineElement) {
 
@@ -136,7 +137,6 @@ function append_cube_wrapper_class() {
 }
 //#endregion append cube
 
-
 function append_first_line() {
     var leftPos = 10;
     append_blue_cube(10, 0, 10);
@@ -149,6 +149,43 @@ function start_game() {
     append_example_class();
     generate_left_lines();
     generate_left_example();
+    find_next_input_disable_element_to_focus();
+    edit_last_inline_input_focus_element_and_check_answer();
+}
+
+function find_next_input_disable_element_to_focus() {
+    var next_element = document.getElementsByClassName("inline_input disabled")[0];
+    next_element.classList.remove("disabled");
+    next_element.classList.add("focused");
+}
+
+function edit_last_inline_input_focus_element_and_check_answer(number) {
+    // number = 2;
+    var flag = false;
+    var last_inline_input_focus_element = document.getElementsByClassName("inline_input focused")[0];
+    // console.log(last_inline_input_focus_element);
+    var blueCount = last_inline_input_focus_element.parentElement.parentElement.getElementsByClassName("cube_blue").length;
+    var redCount = last_inline_input_focus_element.parentElement.parentElement.getElementsByClassName("cube_red").length;
+    console.log("blue count --> " + blueCount + ", red count --> " + redCount);
+    var arrayElement = last_inline_input_focus_element.parentElement.getElementsByClassName("inline_input");
+    console.log(arrayElement);
+    for (var i = 0; i < arrayElement.length; i++) {
+        if (arrayElement[i] === last_inline_input_focus_element) {
+            var spanElement = last_inline_input_focus_element.getElementsByTagName("span")[0];
+            var count = i == 0 ? blueCount : redCount;
+            if (number != count) {
+                spanElement.classList.add("wrong");
+            } else {
+                last_inline_input_focus_element.classList.replace("focused", "blank");
+                if (spanElement.classList.contains("wrong")) spanElement.classList.remove("wrong");
+                flag = true;
+            }
+            spanElement.textContent = number;
+        }
+    }
+    return flag;
+
+
 }
 
 function generate_left_lines() {
