@@ -25,6 +25,9 @@ app.get('/loadthetrucks', function(req, res) {
   res.render('HTML/load_the_trucks', {});
 })
 
+app.get('/congratulation', function(req, res) {
+  res.render('HTML/completed_screen', {});
+})
 
 app.listen(8080);
 

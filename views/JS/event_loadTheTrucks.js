@@ -8,14 +8,13 @@ function handleDragStart(event) {
 		event.dataTransfer.setData('text/html', event.target.getAttribute('class'));
 	}
 	else {
-
 		this.parentNode.classList.remove('done');
 		event.dataTransfer.effectAllowed = 'move';
 		event.dataTransfer.setData('text/html', event.target.getAttribute('class'));
 		var indexElement = searchNumber(this.classList.toString());
 		document.getElementsByClassName('cont')[0].appendChild(this);
-		this.style.left =  (147 + 65 * indexElement).toFixed(1) + 'px';
-		this.style.top = (323 - (20 + 24 * (numbersLesson.left[0][indexElement] - 1))) + 'px';
+		this.style.left =  (342 - 65 * indexElement).toFixed(1) + 'px';
+		this.style.top = (323 - (20 + 24 * (numbersLesson.left[partLesson - 1][indexElement] - 1))) + 'px';
 	}
 	return true;
 }
@@ -45,7 +44,6 @@ function handleDragEnter(event) {
 // Sự kiện khi di chuyển ra khỏi vật thể
 function handleDragLeave(event) {
 	this.classList.remove('highlighted');
-	console.log('Leave element');
 }
 // Sự kiện thả
 function handleDrop(event) {
@@ -66,7 +64,7 @@ function handleDrop(event) {
 		elementSource.style.left = 0;
 		elementSource.style.top = heightHolder - brickInTheTruck - brickSelect - 4 +'px';
 		this.classList.add('done');
-		console.log(this)
+
 		// Người dùng có thể bấm để kiểm tra
 		var buttonCheck = document.getElementsByClassName('button_place')[0];
 		if(buttonCheck.classList.toString().indexOf('disabled') === -1) {
