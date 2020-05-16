@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="/server/views/CSS/khung_game.css">
 	<link rel="stylesheet" type="text/css" href="/server/views/CSS/loadthetrucks.css">
 	<link rel="stylesheet" type="text/css" href="/server/views/CSS/btn_start.css">
-	<!-- <link rel="shortcut icon" href="#" /> -->
+	<link rel="shortcut icon" href="#" />
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 </head>
 <body>
@@ -77,10 +77,8 @@
 <script type="text/javascript" src="server/views/JS/event_loadTheTrucks.js"></script>
 
 <script type="text/javascript">
-
 	createBead();
 	function gameLaucher() {
-
 		var placeHolder = document.getElementsByClassName('placeholder');
 		[].forEach.call(placeHolder, function(holder) {
 			holder.addEventListener('dragenter', handleDragEnter, false)

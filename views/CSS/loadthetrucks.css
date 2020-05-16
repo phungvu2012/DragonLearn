@@ -233,7 +233,6 @@ div .smoke_gen {
     position: absolute;
     z-index: 3;
     transition: box-shadow .3s;
-    opacity: 0.4;
 }
 
 .to_load_brick .cap {

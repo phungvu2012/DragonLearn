@@ -44,7 +44,6 @@ function handleDragEnter(event) {
 // Sự kiện khi di chuyển ra khỏi vật thể
 function handleDragLeave(event) {
 	this.classList.remove('highlighted');
-	console.log('Leave element');
 }
 // Sự kiện thả
 function handleDrop(event) {
@@ -65,7 +64,7 @@ function handleDrop(event) {
 		elementSource.style.left = 0;
 		elementSource.style.top = heightHolder - brickInTheTruck - brickSelect - 4 +'px';
 		this.classList.add('done');
-		console.log(this)
+
 		// Người dùng có thể bấm để kiểm tra
 		var buttonCheck = document.getElementsByClassName('button_place')[0];
 		if(buttonCheck.classList.toString().indexOf('disabled') === -1) {

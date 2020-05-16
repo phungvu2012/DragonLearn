@@ -38,7 +38,7 @@ function createScene() {
 	var container = document.getElementsByClassName('cont')[0];
 
 	var scene = document.createElement('div');
-	scene.setAttribute('class', 'scene');
+	scene.setAttribute('class', 'scene under_start');
 	container.appendChild(scene);
 	
 	createTruck();	// Tạo ô tô chứa
@@ -50,7 +50,7 @@ function createScene() {
 function createTruck() {
 	var scene = document.getElementsByClassName('scene')[0];
 	var truck = document.createElement('div');
-	truck.setAttribute('class', 'truck under_start');
+	truck.setAttribute('class', 'truck');
 	scene.appendChild(truck);
 
 	var smokeGen = document.createElement('div');	
@@ -78,7 +78,9 @@ function createBricks(numbers) {
 		var newCap = document.createElement('div');
 		newCap.setAttribute('class','cap');
 		var newSpan = document.createElement('span');
-		var text = document.createTextNode(numbers[i]);
+		var text;
+		if(numbers[i] !== 0) text = document.createTextNode(numbers[i]);
+		else text = document.createTextNode('');
 		newSpan.appendChild(text);
 		newLoadedBrick.appendChild(newCap);
 		newLoadedBrick.appendChild(newSpan);
@@ -135,7 +137,7 @@ function createToLoadBricks(numbers) {
 		newToLoadedBrick.setAttribute('class','to_load_brick under_start');
 		newToLoadedBrick.classList.add('element' + i);
 		// Giá trị đầu tiên là 20 vì cách lề thêm 4px để dễ nhìn hơn;
-		console.log('create block');
+		
 		newToLoadedBrick.setAttribute('style','height:' +  (20 + 24 * (numbers[i] - 1)).toFixed(1) + 'px; left: ' + (342 - 65 * i).toFixed(1) + 'px; top: ' + (323 - (20 + 24 * (numbers[i] - 1))) + 'px; touch-action: none;');
 		newToLoadedBrick.setAttribute('draggable','true');
 		var newCap = document.createElement('div');
@@ -157,7 +159,7 @@ function createLesson(numbersLesson) {
 	buttonPlace();	// Tạo nút xác nhận
 }
 
-
+// Chuyển sang bài học tiếp
 function nextLesson(){
 	var cont = document.getElementsByClassName('cont')[0],
 	 	scene = document.getElementsByClassName('scene')[0],

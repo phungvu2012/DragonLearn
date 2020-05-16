@@ -19,7 +19,7 @@ function startLesson() {
  		if(count === 10) clearInterval(id);
  	})
 
-	document.getElementsByClassName('truck')[0].classList.remove('under_start');
+	document.getElementsByClassName('scene')[0].classList.remove('under_start');
   	var triangle = document.getElementsByClassName('triangle');
 	triangle[0].style.background = '200%';
 	document.getElementsByClassName('scene')[0].style.opacity = '1';
@@ -28,7 +28,7 @@ function startLesson() {
 	var bricks = document.getElementsByClassName('to_load_brick');
 	for (var i = bricks.length - 1; i >= 0; i--) {
 		bricks[i].classList.add('finished', 'openhand');
-		bricks[i].style.opacity = '1';
+		bricks[i].classList.remove('under_start');
 	}
 }
 
@@ -75,7 +75,7 @@ function checkResult(event) {
 			var elementNumberSpace = 10 - numbersLesson.right[partLesson - 1][i];
 			// console.log()
 			if(elementNumberAdd === elementNumberSpace){
-				console.log('pass');
+				// console.log('pass');
 			}
 			else {
 				doneLesson = false;
@@ -101,7 +101,9 @@ function checkResult(event) {
 				scene.style.left = (i * 15) + 'px';
 				if(i === 50) clearInterval(id);
 			} , 100)
-		if(partLesson === totalLesson) window.location = 'congratulation';
+		if(partLesson === totalLesson) setTimeout(function() {
+			window.location = 'congratulation';
+		}, 4000)
 		else setTimeout(nextLesson, 100 * 50);
 	}
 	else {
