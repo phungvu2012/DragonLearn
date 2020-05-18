@@ -179,6 +179,7 @@ $(document).ready(function() {
 				outBox(objtail[0], objhead[0]);
 				if(complete(currentNumberOnTail, currentNumberOnHead)) {
 					setTimeout(function() {
+						if(stage == 4) window.location = 'congratulation';
 						stage++;
 						loadStage(stage, currentNumberOnTail, currentNumberOnHead, arrayTail, arrayHead, objtail, objhead);
 					}, 3000);
@@ -217,6 +218,7 @@ $(document).ready(function() {
 				outBox(objtail[0], objhead[1]);
 				if(complete(currentNumberOnTail, currentNumberOnHead)) {
 					setTimeout(function() {
+						if(stage == 4) window.location = 'congratulation';
 						stage++;
 						loadStage(stage, currentNumberOnTail, currentNumberOnHead, arrayTail, arrayHead, objtail, objhead);
 					}, 3000);
@@ -255,6 +257,7 @@ $(document).ready(function() {
 				outBox(objtail[0], objhead[2]);
 				if(complete(currentNumberOnTail, currentNumberOnHead)) {
 					setTimeout(function() {
+						if(stage == 4) window.location = 'congratulation';
 						stage++;
 						loadStage(stage, currentNumberOnTail, currentNumberOnHead, arrayTail, arrayHead, objtail, objhead);
 					}, 3000);
@@ -311,6 +314,7 @@ $(document).ready(function() {
 				outBox(objtail[1], objhead[0]);
 				if(complete(currentNumberOnTail, currentNumberOnHead)) {
 					setTimeout(function() {
+						if(stage == 4) window.location = 'congratulation';
 						stage++;
 						loadStage(stage, currentNumberOnTail, currentNumberOnHead, arrayTail, arrayHead, objtail, objhead);
 					}, 3000);
@@ -349,6 +353,7 @@ $(document).ready(function() {
 				outBox(objtail[1], objhead[1]);
 				if(complete(currentNumberOnTail, currentNumberOnHead)) {
 					setTimeout(function() {
+						if(stage == 4) window.location = 'congratulation';
 						stage++;
 						loadStage(stage, currentNumberOnTail, currentNumberOnHead, arrayTail, arrayHead, objtail, objhead);
 					}, 3000);
@@ -387,6 +392,7 @@ $(document).ready(function() {
 				outBox(objtail[1], objhead[2]);
 				if(complete(currentNumberOnTail, currentNumberOnHead)) {
 					setTimeout(function() {
+						if(stage == 4) window.location = 'congratulation';
 						stage++;
 						loadStage(stage, currentNumberOnTail, currentNumberOnHead, arrayTail, arrayHead, objtail, objhead);
 					}, 3000);
@@ -443,6 +449,7 @@ $(document).ready(function() {
 				outBox(objtail[2], objhead[0]);
 				if(complete(currentNumberOnTail, currentNumberOnHead)) {
 					setTimeout(function() {
+						if(stage == 4) window.location = 'congratulation';
 						stage++;
 						loadStage(stage, currentNumberOnTail, currentNumberOnHead, arrayTail, arrayHead, objtail, objhead);
 					}, 3000);
@@ -481,6 +488,7 @@ $(document).ready(function() {
 				outBox(objtail[2], objhead[1]);
 				if(complete(currentNumberOnTail, currentNumberOnHead)) {
 					setTimeout(function() {
+						if(stage == 4) window.location = 'congratulation';
 						stage++;
 						loadStage(stage, currentNumberOnTail, currentNumberOnHead, arrayTail, arrayHead, objtail, objhead);
 					}, 3000);
@@ -519,6 +527,7 @@ $(document).ready(function() {
 				outBox(objtail[2], objhead[2]);
 				if(complete(currentNumberOnTail, currentNumberOnHead)) {
 					setTimeout(function() {
+						if(stage == 4) window.location = 'congratulation';
 						stage++;
 						loadStage(stage, currentNumberOnTail, currentNumberOnHead, arrayTail, arrayHead, objtail, objhead);
 					}, 3000);
