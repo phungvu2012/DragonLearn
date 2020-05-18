@@ -27,17 +27,17 @@
 	<img class="uchiru-bg-color" src="/server/Image/Background/grad-f07e854ce64f9aee2db7bd67146ff0e4800feeed40c8f7116fcb3b6a048deb64.jpg" />
 	<div class="uchiru-box">
 		<div class="uchiru-head">
-			<a class="back-link" href="/server/views/additionAndSuntractionUpTo10.html">
+			<a class="back-link" href="/">
 				<div class="arrow-left"></div>
 				<span>Back</span>
 			</a>
-			<div class="uchiru-head__right-group">
+			<div class="uchiru-head__right-group"  onclick="selectLanguage()">
 				<a class="uchiru-locale-dropdown__toggle" href="#">
 					<span class="uchiru-locale-dropdown__toggle__text">English</span>
 					<span class="uchiru-locale-dropdown__toggle__caret"></span>
 				</a>
-				<ul class="uchiru-locale-dropdown__menu uchiru-locale-dropdown__menu_pull-right">
-					<li class="uchiru-locale-dropdown__menu_item">
+				<ul class="uchiru-locale-dropdown__menu uchiru-locale-dropdown__menu_pull-right" style='display: none'>
+					<li class="uchiru-locale-dropdown__menu_item"> 
 						<a href="#" class="uchiru-locale-dropdown__menu__item__link">English</a>
 					</li>
 					<li class="uchiru-locale-dropdown__menu_item">
@@ -45,10 +45,18 @@
 					</li>
 				</ul>
 			</div>
+			<script type="text/javascript">
+				function selectLanguage() {
+					var languageMenu = document.getElementsByClassName('uchiru-locale-dropdown__menu_pull-right')[0];
+						if(languageMenu.style.display === 'none') {
+							languageMenu.style.display = 'block';
+						}
+						else languageMenu.style.display	 = 'none';
+					}
+			</script>
 			<div class="beads-wrapper">
 				<div class="progress">
-					<div class="inner_progess">
-						<i class="az_ball_0" id="bead0" style="left: 4px;"></i>
+					<div class="inner_progress">
 					</div>
 				</div>
 			</div>

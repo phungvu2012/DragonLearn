@@ -12,15 +12,15 @@ div .uchiru-bg-stuff {
 	background-image: url(../../Image/Background/stuff-124d4f39a55f743d41ae005514723d90ae7e61faaf258f2187335151d10556b3.png);
 }
 .uchiru-bg-cell, .uchiru-bg-color, .uchiru-bg-stuff {
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vw;
 	position: absolute;
 	top: 0;
 }
 
 img.uchiru-bg-color {
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vw;
 	z-index: -1;
 	top: 0;
 	bottom: 0;

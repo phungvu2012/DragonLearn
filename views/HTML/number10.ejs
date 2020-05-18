@@ -6,29 +6,37 @@
 	<title>Number 10</title>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../CSS/Normalize.css" />
-	<link rel="stylesheet" type="text/css" href="../CSS/background_game.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/khung_game.css">
+	<link rel="stylesheet" type="text/css" href="/server/views/CSS/Normalize.css" />
+	<link rel="stylesheet" type="text/css" href="/server/views/CSS/background_game.css">
+	<link rel="stylesheet" type="text/css" href="/server/views/CSS/khung_game.css">
+	<link rel="stylesheet" type="text/css" href="/server/views/CSS/number10.css">
+	<!-- <link rel="stylesheet" type="text/css" href="/server/views/CSS/number10.css"> -->
 </head>
 <body>
 	<div class="uchiru">
+		<div class="uchiru-bg-cell"></div>
+		<div class="uchiru-bg-color"></div>
+		<div class="uchiru-bg-stuff"></div>
+		<img class="uchiru-bg-color" src="/server/Image/Background/grad-f07e854ce64f9aee2db7bd67146ff0e4800feeed40c8f7116fcb3b6a048deb64.jpg" />
+		<div class="uchiru-box">
+			<div class="uchiru">
 	<div class="uchiru-bg-cell"></div>
 	<div class="uchiru-bg-color"></div>
 	<div class="uchiru-bg-stuff"></div>
-	<img class="uchiru-bg-color" src="../../Image/Background/grad-f07e854ce64f9aee2db7bd67146ff0e4800feeed40c8f7116fcb3b6a048deb64.jpg" />
+	<img class="uchiru-bg-color" src="/server/Image/Background/grad-f07e854ce64f9aee2db7bd67146ff0e4800feeed40c8f7116fcb3b6a048deb64.jpg" />
 	<div class="uchiru-box">
 		<div class="uchiru-head">
-			<a class="back-link" href="../../additionAndSuntractionUpTo10.html">
+			<a class="back-link" href="/">
 				<div class="arrow-left"></div>
 				<span>Back</span>
 			</a>
-			<div class="uchiru-head__right-group">
+			<div class="uchiru-head__right-group"  onclick="selectLanguage()">
 				<a class="uchiru-locale-dropdown__toggle" href="#">
 					<span class="uchiru-locale-dropdown__toggle__text">English</span>
 					<span class="uchiru-locale-dropdown__toggle__caret"></span>
 				</a>
-				<ul class="uchiru-locale-dropdown__menu uchiru-locale-dropdown__menu_pull-right">
-					<li class="uchiru-locale-dropdown__menu_item">
+				<ul class="uchiru-locale-dropdown__menu uchiru-locale-dropdown__menu_pull-right" style='display: none'>
+					<li class="uchiru-locale-dropdown__menu_item"> 
 						<a href="#" class="uchiru-locale-dropdown__menu__item__link">English</a>
 					</li>
 					<li class="uchiru-locale-dropdown__menu_item">
@@ -38,17 +46,72 @@
 			</div>
 			<div class="beads-wrapper">
 				<div class="progress">
-					<div class="inner_progess">
-						<i class="az_ball_0" id="bead0" style="left: 4px;"></i>
+					<div class="inner_progress">
 					</div>
-				</div>	
+				</div>
+			</div>
+
+		</div>
+			<div class="card-content">
+				<!-- Viết code ở đây-->
+				<div id="board" class="uchiru-place card player-1 fixed" style=""> 
+					<!-- under_start -->
+					<div class="line first_line  finished"><div class="cubes_wrapper" style="width: 487px;"><div class="cube blue" style="left: 10px;"></div><div class="cube blue" style="left: 55px;"></div><div class="cube blue" style="left: 100px;"></div><div class="cube blue" style="left: 145px;"></div><div class="cube blue" style="left: 190px;"></div><div class="cube blue" style="left: 242px;"></div><div class="cube blue" style="left: 287px;"></div><div class="cube blue" style="left: 332px;"></div><div class="cube blue" style="left: 377px;"></div><div class="cube blue" style="left: 422px;"></div><div class="brace_top" style="top: -14px; left: 8px; width: 472px;"><div class="corner_white" style="left: 228px;"></div><div class="corner_gray" style="left: 228px;"></div><div class="brace_round_hint" style="top: -45px; left: 236px;">10</div></div></div><div class="example"><div class="inline_input blank"><div class="__outer"><div class="__inner"><span>1</span><span>0</span><div class="mt m1"></div><div class="mb m1"></div></div></div></div><span>+</span><div class="inline_input blank"><div class="__outer"><div class="__inner"><span>0</span></div></div></div><span>=</span><div class="inline_input blank"><div class="__outer"><div class="__inner"><span>1</span><span>0</span><div class="mt m1"></div><div class="mb m1"></div></div></div></div></div></div>
+				</div>
+
+				
 			</div>
 		</div>
-		<div class="card-content">
-			<!-- Viết code ở đây-->
-		</div>
 	</div>
-	</div>
+<script type="text/javascript">
+	var currentLesson = 8,
+		totalLesson = 10;
+	function createLine() {
+		// body...
+		var board =  document.getElementById('board');
+		for (var i = 0; i < totalLesson; i++) {
+			console.log('hello');
+			var line = document.createElement('div');
+			line.setAttribute('class', 'line');
+			board.appendChild(line);
+		}
+	}
 
+	function createPartLesson() {
+		var line = document.getElementsByClassName('line')[currentLesson];
+
+		createCube(line);
+		createExample(line);
+	}
+
+	function createExample(line) {
+		var example = 
+	}
+
+	function createCube(line) {
+		var cubesWrapper = document.createElement('div');
+			cubesWrapper.setAttribute('class', 'cubes_wrapper');
+
+		line.appendChild(cubesWrapper);
+		for (var i = 0; i < totalLesson; i++) {
+			var cube = document.createElement('div');
+			if(i >= 10 - currentLesson) cube.setAttribute('class', 'cube pink')
+			else cube.setAttribute('class', 'cube blue')
+			
+			if(i >= 5) cube.setAttribute('style', 'left: ' + (10 + i * 45 + 7) + 'px; z-index: 2;');
+			else cube.setAttribute('style', 'left: ' + (10 + i * 45) + 'px; z-index: 2;');
+
+			var cubeHighlight = document.createElement('div');
+			cubeHighlight.setAttribute('class', 'cube_highlight')
+			cubeHighlight.setAttribute('style', 'left: ' + (4 + i * 45) + 'px; display: none;')
+
+			cubesWrapper.appendChild(cube);
+			cubesWrapper.appendChild(cubeHighlight);
+		}
+	}
+
+	createLine();
+	createPartLesson();
+</script>
 </body>
 </html>

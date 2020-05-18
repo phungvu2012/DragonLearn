@@ -1,0 +1,188 @@
+.fixed {
+    width: 960px;
+    min-height: 483px;
+}
+
+.uchiru-place {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 1px;
+    margin-top: -1px;
+    line-height: 1.5;
+}
+
+.card .line.first_line {
+    margin-top: 70px;
+}
+
+.finished {
+    -webkit-filter: none;
+    -moz-filter: none;
+    filter: none;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.line {
+    margin-top: 17px;
+    font-size: 42px;
+    height: 90px;
+}
+
+.under_start{
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    filter: blur(5px);
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.player-1 * {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.cubes_wrapper {
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-left: 30px;
+    margin-top: 17px;
+    width: 330px;
+    height: 90px;
+}
+
+.cube.blue {
+    z-index: 1;
+    background: url('../../Image/Number 10/19.png	') -27px -33px no-repeat;
+}
+.cube {
+    position: absolute;
+    width: 59px;
+    height: 55px;
+    top: 10px;
+}
+
+.brace_top {
+    position: absolute;
+    height: 14px;
+    border-radius: 8px 8px 2px 2px;
+    border-top: 2px solid #bcbcbc;
+    border-left: 2px solid #bcbcbc;
+    border-right: 2px solid #bcbcbc;
+}
+
+.brace_top .corner_white {
+    z-index: 2;
+    top: -5px;
+    border-bottom: 8px solid #fff;
+}
+
+.brace_top .corner_white {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    position: absolute;
+}
+
+.brace_round_hint {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    margin-left: -20px;
+    border-radius: 20px;
+    background-color: #c8c8c8;
+    font-size: 22px;
+    line-height: 38px;
+}
+
+.card .example {
+    display: inline-block;
+    float: right;
+    margin-right: 30px;
+    line-height: 90px;
+    margin-top: 12px;
+}
+
+.inline_input {
+    display: inline-block;
+    position: relative;
+    line-height: 1;
+    font-size: 1px;
+}
+
+.__outer {
+    padding: 5px;
+    margin: 0 7px;
+    vertical-align: baseline;
+    line-height: 1;
+    font-size: 1px;
+}
+
+.inline_input .__outer .__inner {
+    text-align: center;
+    position: relative;
+    white-space: nowrap;
+    padding: 0;
+    line-height: 1;
+    font-size: 1px;
+}
+
+.inline_input .__outer .__inner>span:first-of-type {
+    margin-left: 5px;
+}
+
+.inline_input .__outer .__inner>span {
+    font-size: 42px;
+    display: inline-block;
+    width: 27px;
+    height: 43px;
+    padding-top: 6px;
+    position: relative;
+    text-align: center;
+    vertical-align: baseline;
+    margin-right: 0;
+}
+
+.inline_input .__outer .__inner .mt.m1 {
+    left: 31px;
+}
+
+.inline_input .__outer .__inner .mt {
+    top: 0;
+    background-color: #E09121;
+}
+
+.inline_input .__outer .__inner .mt {
+    display: none;
+    position: absolute;
+    width: 1px;
+    height: 4px;
+}
+
+.brace_top .corner_gray {
+    z-index: 1;
+    top: -8px;
+    border-bottom: 8px solid #bcbcbc;
+}
+
+.brace_top .corner_gray, .card.script98 .brace_top .corner_white {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    position: absolute;
+}
+
+.card .cube_highlight {
+    position: absolute;
+    width: 72px;
+    height: 68px;
+    top: 5px;
+    z-index: 1;
+    background: url('../../Image/Number 10/17.png') -980px -27px no-repeat;
+}
+
+.cube.pink {
+    z-index: 2;
+    background: url('../../Image/Number 10/18.png') -27px -33px no-repeat;
+}
