@@ -1,3 +1,4 @@
+var lastLine = 0;
 document.onkeypress = function(event) {
     const isNumber = /^[0-9]$/i.test(event.key);
     console.log(event);
@@ -147,14 +148,26 @@ function append_first_line() {
 function start_game() {
     append_cube_wrapper_class();
     append_example_class();
-    generate_left_lines();
+    generate_left_lines_hidden();
     generate_left_example();
     find_next_input_disable_element_to_focus();
     edit_last_inline_input_focus_element_and_check_answer();
 }
 
 function find_next_input_disable_element_to_focus() {
+
     var next_element = document.getElementsByClassName("inline_input disabled")[0];
+    var line = next_element.parentElement.parentElement;
+    var allLines = document.getElementsByClassName("line");
+    console.log(" line --> " + line);
+    for (var i = 0; i < allLines.length; i++) {
+        if (line === allLines[i]) {
+            if (i != lastLine) {
+                allLines[i].style.display = "block";
+                lastLine = i;
+            }
+        }
+    }
     next_element.classList.remove("disabled");
     next_element.classList.add("focused");
 }
@@ -188,11 +201,13 @@ function edit_last_inline_input_focus_element_and_check_answer(number) {
 
 }
 
-function generate_left_lines() {
-    var totalLines = 9;
+function generate_left_lines_hidden() {
+    var lines = document.getElementsByClassName("line");
+    // var totalLines = 9;
     // var totalCubes = 10;
-    for (var i = 1; i <= totalLines; i++) {
-        append_blue_and_red_cube(10, i, totalLines - i + 1, i);
+    for (var i = 0; i < lines.length; i++) {
+        lines[i].style.display = "none";
+        append_blue_and_red_cube(10, i + 1, 10 - i - 1, i + 1);
     }
 }
 
@@ -219,4 +234,7 @@ function on_btn_play_clicked() {
     hide_btn_play();
     remove_blur_under_start();
     start_game();
+    setTimeout(function() {
+        document.getElementsByClassName("line")[0].style.display = "block";
+    }, 500);
 }
