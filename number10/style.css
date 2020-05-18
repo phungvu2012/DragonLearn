@@ -331,6 +331,16 @@
     user-select: none;
 }
 
+.inline_input.focused {
+    display: inline-block;
+    font-family: "PT Sans";
+    font-size: 1px;
+    line-height: 1px;
+    position: relative;
+    text-align: center;
+    user-select: none;
+}
+
 .inline_input.focused .__outer {
     animation-delay: 0s;
     animation-direction: normal;
@@ -389,6 +399,10 @@
     user-select: none;
 }
 
+.inline_input .__outer .__inner > span.wrong
+{
+    color: red;
+}
 .inline_input.focused .__outer .__inner {
     background-color: rgb(255, 255, 255);
     border-bottom-left-radius: 5px;
