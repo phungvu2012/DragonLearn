@@ -11,6 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="/server/views/CSS/background_game.css">
 	<link rel="stylesheet" type="text/css" href="/server/views/CSS/khung_game.css">
 	<link rel="stylesheet" type="text/css" href="/server/views/CSS/10_berries.css" />
+	<link rel="stylesheet" type="text/css" href="/server/views/CSS/btn_start.css" />
+
 	<script type="text/javascript" src="/server/views/JS/jquery-3.5.0.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
   			integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
@@ -23,8 +25,7 @@
 	<div class="uchiru-bg-color"></div>
 	<div class="uchiru-bg-stuff"></div>
 	<img class="uchiru-bg-color" src="/server/Image/Background/grad-f07e854ce64f9aee2db7bd67146ff0e4800feeed40c8f7116fcb3b6a048deb64.jpg" />
-	<div class="uchiru-box">
-	<img class="uchiru-bg-color" src="/server/Image/Background/grad-f07e854ce64f9aee2db7bd67146ff0e4800feeed40c8f7116fcb3b6a048deb64.jpg" />
+
 	<div class="uchiru-box">
 		<div class="uchiru-head">
 			<a class="back-link" href="/">
@@ -37,7 +38,7 @@
 					<span class="uchiru-locale-dropdown__toggle__caret"></span>
 				</a>
 				<ul class="uchiru-locale-dropdown__menu uchiru-locale-dropdown__menu_pull-right" style='display: none'>
-					<li class="uchiru-locale-dropdown__menu_item"> 
+					<li class="uchiru-locale-dropdown__menu_item">
 						<a href="#" class="uchiru-locale-dropdown__menu__item__link">English</a>
 					</li>
 					<li class="uchiru-locale-dropdown__menu_item">
@@ -61,23 +62,25 @@
 				</div>
 			</div>
 		</div>
-		<div class="card-content">
-			<!-- Viết code ở đây-->
-			<div id="khung">
-				<div id="tail1" class="tail"></div>
-				<div id="tail2" class="tail"></div>
-				<div id="tail3" class="tail"></div>
+			<div class="card-content card">
+				<!-- Viết code ở đây-->
+				<div class="disabled" id="board">
+					<div id="khung" class="under_start">
+							<div id="tail1" class="tail"></div>
+							<div id="tail2" class="tail"></div>
+							<div id="tail3" class="tail"></div>
+					</div>
+					<div id="head1" class="head under_start"></div>
+					<div id="head2" class="head under_start"></div>
+					<div id="head3" class="head under_start"></div>
+					<div id="vien_xanh_duoi"></div>
+					<div id="vien_xanh_dau"></div>
+					<div id="vien_do_duoi"></div>
+					<div id="vien_do_dau"></div>
 			</div>
-			<div id="head1" class="head"></div>
-			<div id="head2" class="head"></div>
-			<div id="head3" class="head"></div>
-			<div id="vien_xanh_duoi"></div>
-			<div id="vien_xanh_dau"></div>
-			<div id="vien_do_duoi"></div>
-			<div id="vien_do_dau"></div>
 		</div>
 	</div>
-	</div>
+</div>
 
 </body>
 </html>

@@ -63,7 +63,7 @@ function loadStage(stage, currNOT, currNOH, arrT, arrH, objtail, objhead) {
 	objhead[2].style.width = "215px";
 }
 // Main code
-$(document).ready(function() {
+function addEvent() {
 	//Các object trong bài (Chưa tối ưu)
 	var objKhung = document.getElementById("khung");
 	var objtail = document.getElementsByClassName("tail");
@@ -131,7 +131,6 @@ $(document).ready(function() {
 		}
     }
 	});
-
 	$('#tail1').draggable({
 	stop: function() {
         var offset = $(this).offset();
@@ -536,4 +535,50 @@ $(document).ready(function() {
 		}
     }
 	});
-});
+}
+$(document).ready(function(){
+	createButonPlay();
+})
+
+function startLesson() {
+	var buttonPlay = document.getElementsByClassName('btn_play');
+	setTimeout(function() {
+	buttonPlay[0].style.display = 'none';
+	} , 1000)
+
+	buttonPlay[0].style.opacity = '1';
+	buttonPlay[0].style.width = '300px';
+ 	buttonPlay[0].style.height = '300px';
+ 	buttonPlay[0].style.margin = '-190px 0 0 -190px';
+ 	var count = 0;
+ 	var id = setInterval(function () {
+ 		count++;
+ 		buttonPlay[0].style.opacity = 1 - count *0.1 +'';
+ 		if(count === 10) clearInterval(id);
+ 	})
+
+	// var khung = document.getElementById('khung').class
+	var e = document.getElementsByClassName('under_start');
+	for(var i = 0, length = e.length; i < length; i++) {
+		e[i].classList.add('finished');
+	}
+	addEvent();
+}
+function createButonPlay() {
+	var board = document.getElementById('board');
+	var buttonPlay = document.createElement('div');
+	buttonPlay.setAttribute('class', 'btn_play');
+	// buttonPlay.classList.add('')
+
+	var triangle = document.createElement('div');
+	triangle.setAttribute('class', 'triangle');
+
+	var span = document.createElement('span'),
+		text = document.createTextNode('Start');
+
+	span.appendChild(text);
+	triangle.appendChild(span);
+	buttonPlay.appendChild(triangle);
+	board.appendChild(buttonPlay);
+	buttonPlay.addEventListener('click',startLesson);
+}
